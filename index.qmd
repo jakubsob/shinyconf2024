@@ -1,0 +1,1659 @@
+---
+title: 'Getting The Most Out Of <br> Test-Driven Development <br> For Shiny'
+date: '2024-04-19'
+date-format: long
+author: Jakub Sobolewski
+execute:
+  echo: true
+  error: true
+format:
+  revealjs:
+    slide-number: true
+    template-partials:
+      - template.html
+      - title-slide.html
+    logo: ./assets/logo.png
+    menu: false
+    theme: [dark, theme.scss]
+    transition: slide
+    highlight-style: github
+    incremental: true
+    margin: 0.1
+    width: 1860
+    height: 1050
+    background-image: ./assets/background.jpg
+    title-slide-attributes:
+      data-notes: |
+        Hello everyone, I hope you're enjooying the conference.
+        In this session we're going to talk about Test-Driven Development and how to do it effectively.
+        I'm Jakub Sobolewski, I'm a Senior R/Shiny developer at Appsilon. I've been using TDD for almost 3 years.
+        I used it in a variety of projects, from small prototypes developed in 2 weeks, to huge apps developed over many months.
+        I used it to develop R packages as well.
+---
+
+<img src="./assets/background.jpg" style="display: none;"/>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+      }
+    }
+  }
+</script>
+
+::: {.nonincremental .text-2xl .text-center .h-full .flex .flex-col .items-center .justify-center}
+
+1. What is TDD?
+2. How to do TDD?
+3. Why use TDD?
+
+:::
+
+:::{.notes}
+In this session we're going to answer three questions:
+
+- What is Test-Driven Development?
+- How to do it in R and how we can use it to develop Shiny apps.
+- And last, but not least, why should we use it?
+
+I hope that by the end of the session, you'll have a better understanding of TDD and why it's worth giving it a try.
+:::
+
+# {auto-animate=true}
+
+::::{.grid .grid-cols-2 .grid-rows-1 .place-items-center .text-xl}
+
+<div>
+<h2>What is TDD?</h2>
+</div>
+
+<div class="justify-self-start">
+
+:::{.fragment}
+🏛️ A design technique.
+:::
+
+:::{.fragment}
+📈 A guided evolution.
+:::
+
+:::{.fragment}
+🧪 Tests first.
+:::
+
+</div>
+
+::::
+
+::: {.notes}
+- It a technique in which tests help us design our code, it's not really about testing.
+- It is a guided evolution with clear feedback after each step.
+- And last, but not least, it's a process where we write tests before we write the production code.
+:::
+
+# 3 steps of TDD {auto-animate=true .top}
+
+::::{.text-xl}
+❌ Red
+
+✅ Green
+
+🔁 Refactor
+::::
+
+# 3 steps of TDD {auto-animate=true .top}
+
+::::{.text-xl}
+
+:::{.highlight}
+❌ Red
+:::
+
+Write a failing test first. ⛔️
+
+:::{.muted}
+✅ Green
+:::
+
+:::{.muted}
+🔁 Refactor
+:::
+
+::::
+
+::: {.notes}
+There are 3 steps in TDD.
+
+Red - this is where we start by writing a failing test. It will fail because the code we want to test doesn't exist yet. It will fail as long as we don't solve the problem we stated in the test.
+
+This approach is the other way around to the test-last approach where we write tests to make them pass. It changes the dynamic between prodcution code and tests. In TDD we don't try to prove that the code we wrote works as expected using test. We write code to accomplish what is stated in tests.
+:::
+
+# 3 steps of TDD {auto-animate=true .top}
+
+::::{.text-xl}
+
+:::{.muted}
+❌ Red
+:::
+
+:::{.highlight}
+✅ Green
+:::
+
+Write the production code.
+
+:::{.fragment}
+Only as much as needed to make tests pass. ✋
+:::
+
+:::{.muted}
+🔁 Refactor
+:::
+
+::::
+
+:::{.notes}
+1. Green - once we have at least one failing test, we can write production code to satisfy it.
+
+Since we have tests, we can run them as often as we need. We have a reproducible way to check if the code we write works as expected. We don't need to setup the environment by hand each time we sit down to write the code or to do a lot of clicking in the app, if we're developing an app.
+
+If the code does what we want it to, tests will pass.
+
+1. We write only as much production code as needed to make tests pass. Why would we write more code, if tests are already satisfied? Don't do it, You Ain't Gonna Need It.
+:::
+
+# 3 steps of TDD {auto-animate=true .top}
+
+::::{.text-xl}
+
+:::{.muted}
+❌ Red
+:::
+
+:::{.muted}
+✅ Green
+:::
+
+:::{.highlight}
+🔁 Refactor
+:::
+
+Don't worry about breaking things.
+
+:::{.fragment}
+Make code more readable and maintainable. 💄
+:::
+
+
+::::
+
+:::{.notes}
+1. Last step is refactoring - Were you ever afraid of refactoring your code because you thought you might break something? TDD helps you mitigate this problem. We have tests that ensure that the code works as expected. So we can be more liberal in changes we make to the code. If written well, tests don't constrain us, they empower us to make bold changes.
+
+2. We don't only want to have working code, we want to have good code. We can spend some time in this step to make sure our code is clean and easy to understand.
+:::
+
+# {auto-animate=true}
+
+:::: {.grid .grid-cols-5 .grid-rows-1 .place-items-center}
+
+::: {.col-span-2 .justify-self-end}
+
+<h1>Example</h1>
+
+:::
+
+::: {.col-span-3}
+
+![](./assets/arrow.png)
+
+:::
+
+::::
+
+:::{.notes}
+Let's see in practice how the process looks like.
+
+We'll implament a simple function that adds numbers.
+
+It will be a simple example, but it will show how the process works.
+:::
+
+```{r}
+#| echo: false
+library(testthat)
+library(shiny)
+library(shinytest2)
+library(selenider)
+```
+
+# ❌ Red {auto-animate=true auto-animate-unmatched=false .top}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r filename="sum.R", animateid="code1"}
+#
+```
+:::
+
+::: {.column width="60%"}
+
+```{r filename="test-sum.R", animateid="code2"}
+#| code-line-numbers: 2
+describe("my_sum", {
+  it("should calculate the sum for multiple numbers", {
+    fail("Not implemented")
+  })
+})
+```
+
+:::
+
+::::
+
+
+:::{.notes}
+We write down a title of the first behavior we want to implement. This can be the simplest case, just to get us started.
+
+The next step we're about to do was the most scary part of TDD for me. But it was scary only at  the beginning, when I started learning it.
+
+How can we write a test, if there is no code to test?
+:::
+
+# ❌ Red {auto-animate=true auto-animate-unmatched=false .top}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r filename="sum.R", animateid="code1"}
+#
+```
+:::
+
+::: {.column width="60%"}
+
+```{r filename="test-sum.R", animateid="code2"}
+#| code-line-numbers: "3,6,9|3-4|6-7|9-10"
+describe("my_sum", {
+  it("should calculate the sum for multiple numbers", {
+    # Arrange
+    numbers <- c(1, 2)
+
+    # Act
+    result <- my_sum(numbers)
+
+    # Assert
+    expect_equal(result, 3)
+  })
+})
+```
+
+:::
+
+::::
+
+::: {.notes}
+1. It's useful to remember that each test consists of three parts:
+
+- Setup
+- Execution
+- Assertion
+
+We can use #Arrange, #Act, #Assert comments to split our tests into those distinct parts.
+
+1. We start with the setup.
+
+#Arrange is where we prepare the environment. This is where we need to figure out the inputs required to solve the problem.
+
+This is very powerful, why? At this stage, we focus on what we need to be able to solve the problem. Not how we will solve it.
+
+Without understanding the problem we won't be able write down the test. And this is good, we won't write any production code until we have the understanding of the problem. This helps us mitigate the risk of implementing the wrong solution.
+
+1. #Act is where we call our code.
+
+TDD gives us the freedom to experiment with interfaces.
+
+We can try out a few different variants even before we start writing the production code, possibly saving a lot of time on refactoring.
+
+The test you write is the first user of your code. The way you call your code from tests is the way you will call it from the production code. So, think about how you want to use your code and then write it down in a test.
+
+1. In #Assert we focus on how to observe that the code works as expected.
+
+Again, we won't be able to do it without understanding the problem. We should know what is the expected output for given inputs.
+
+But what if it's impossible to know the outcome beforehand? We can still run the test, whithout the assertion, then save the output, check if it's in line with our expectations and save it as the correct result. This is a way to start with TDD when we're not sure what the outcome should be. It's called snapshot testing.
+
+In TDD we first define inputs and outputs, treating the not-yet-existing code as a black box.
+
+This approach produces tests that don't test implementation details. It's impossible to do so since there is no implementation yet!
+
+This makes tests focused on the behavior.
+:::
+
+# ❌ Red {.top auto-animate="true" auto-animate-unmatched=false}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r filename="sum.R", animateid="code1"}
+my_sum <- function(x) {
+
+}
+```
+:::
+
+::: {.column width="60%"}
+```{r filename="test-sum.R", animateid="code2"}
+describe("my_sum", {
+  it("should calculate the sum for multiple numbers", {
+    # Arrange
+    numbers <- c(1, 2)
+
+    # Act
+    result <- my_sum(numbers)
+
+    # Assert
+    expect_equal(result, 3)
+  })
+})
+```
+:::
+
+::::
+
+:::{.notes}
+We implement the function, with the interface we want to use.
+
+Now we see a different test output, now it's a failiure due to the function returning the incorrect value.
+:::
+
+# ✅ Green {.top auto-animate="true"}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r filename="sum.R", animateid="code1"}
+my_sum <- function(x) {
+  x[1] + x[2]
+}
+```
+:::
+
+::: {.column width="60%"}
+```{r filename="test-sum.R", animateid="code2"}
+describe("my_sum", {
+  it("should calculate the sum for multiple numbers", {
+    # Arrange
+    numbers <- c(1, 2)
+
+    # Act
+    result <- my_sum(numbers)
+
+    # Assert
+    expect_equal(result, 3)
+  })
+})
+```
+:::
+
+::::
+
+:::{.notes}
+To make the tests pass we can provide the simplest implementation. If this is the only usage of this function, this implementation would be completely sufficient.
+:::
+
+# ❌ Red {.top auto-animate="true"}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r filename="sum.R", animateid="code1"}
+my_sum <- function(x) {
+  3
+}
+```
+:::
+
+::: {.column width="60%"}
+```{r filename="test-sum.R", animateid="code2"}
+#| code-line-numbers: "1-11|13-22"
+#| code-height: "400px"
+describe("my_sum", {
+  it("should calculate the sum for multiple numbers", {
+    # Arrange
+    numbers <- c(1, 2)
+
+    # Act
+    result <- my_sum(numbers)
+
+    # Assert
+    expect_equal(result, 3)
+  })
+
+  it("should calculate the sum for one number", {
+    # Arrange
+    numbers <- c(1)
+
+    # Act
+    result <- my_sum(numbers)
+
+    # Assert
+    expect_equal(result, 1)
+  })
+})
+```
+:::
+
+::::
+
+:::{.notes}
+1. But we want it to work for more cases, not just adding 1 and 2.
+
+2. We add another case, we expect it to work with a single number. This implementation doesn't do the job. We need to change it.
+:::
+
+# ✅ Green {.top auto-animate="true"}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r filename="sum.R", animateid="code1"}
+my_sum <- function(x) {
+  sum <- 0
+  for (number in x) {
+    sum <- sum + number
+  }
+  sum
+}
+```
+:::
+
+::: {.column width="60%"}
+```{r filename="test-sum.R", animateid="code2"}
+describe("my_sum", {
+  it("should calculate the sum for multiple numbers", {
+    # Arrange
+    numbers <- c(1, 2)
+
+    # Act
+    result <- my_sum(numbers)
+
+    # Assert
+    expect_equal(result, 3)
+  })
+
+  it("should calculate the sum for one number", {
+    # Arrange
+    numbers <- c(1)
+
+    # Act
+    result <- my_sum(numbers)
+
+    # Assert
+    expect_equal(result, 1)
+  })
+})
+```
+:::
+
+:::{.notes}
+This implementation does it's job. Tests are green.
+:::
+
+::::
+
+# 🔁 Refactor {.top auto-animate="true"}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+```{r filename="sum.R", animateid="code1"}
+my_sum <- function(x) {
+  sum(x)
+}
+```
+:::
+
+::: {.column width="60%"}
+```{r filename="test-sum.R", animateid="code2"}
+describe("my_sum", {
+  it("should calculate the sum for multiple numbers", {
+    # Arrange
+    numbers <- c(1, 2)
+
+    # Act
+    result <- my_sum(numbers)
+
+    # Assert
+    expect_equal(result, 3)
+  })
+
+  it("should calculate the sum for one number", {
+    # Arrange
+    numbers <- c(1)
+
+    # Act
+    result <- my_sum(numbers)
+
+    # Assert
+    expect_equal(result, 1)
+  })
+})
+```
+:::
+
+::::
+
+:::{.notes}
+Now can refactor the code to make it cleaner or more efficient.
+:::
+
+# {auto-animate=true}
+
+::::{.grid .grid-cols-1 .grid-rows-1 .place-items-center .text-xl}
+
+<h2>😏 That was easy.</h2>
+
+:::{.fragment}
+How do we use it for more complex problems?
+:::
+
+::::
+
+# 2 approaches {auto-animate=true .top}
+
+::::{.text-xl}
+
+📈 Bottom-up
+
+📉 Top-down
+
+::::
+
+# 2 approaches {auto-animate=true .top}
+
+::::{.text-xl}
+
+:::{.highlight}
+📈 Bottom-up
+:::
+
+Start small. 🧱
+
+:::{.fragment}
+Use existing pieces of codebase. 🧩
+:::
+
+:::{.fragment}
+A design emerges. 🏛️
+:::
+
+:::{.muted}
+📉 Top-down
+:::
+
+::::
+
+:::{.notes}
+1. We start small, with the smallest piece of the problem we can solve.
+2. We use existing pieces of codebase.
+3. We don't know upfront how the solution will look like. We let the design emerge from the tests and code that we write.
+:::
+
+# 2 approaches {auto-animate=true .top}
+
+::::{.text-xl}
+
+:::{.muted}
+📈 Bottom-up
+:::
+
+:::{.highlight}
+📉 Top-down
+:::
+
+List high-level objectives first. 🎯
+
+:::{.fragment}
+Describe behavior from user perspective. 🙌
+:::
+
+:::{.fragment}
+Fill in the gaps until tests pass. 🧩
+:::
+
+::::
+
+:::{.notes}
+1. We focus on high-level objectives first.
+2. We describe the behavior from the user perspective. If it's a Shiny app, this is the perspective of the user interacting with the app. If it's a package, this is a perspective of the user using the functions exported from the package.
+3. We fill in the gaps in code, until tests pass.
+
+So how do we choose the approach?
+:::
+
+# {auto-animate=true}
+
+::::{.grid .grid-cols-1 .grid-rows-1 .place-items-center .text-xl}
+
+<h2>🏎️ We do what helps us move fast.</h2>
+
+::::
+
+:::{.notes}
+
+If we're developing a Shiny module a list of user behaviors we want to implement can be more useful.
+
+If we're developing a computation of a complex algorithm, you might want to start from the smallest piece of the algorithm and build up from there.
+
+:::
+
+# {auto-animate=true}
+
+::::{.grid .grid-cols-1 .grid-rows-1 .place-items-center .text-xl}
+
+<h2>🧪 Tests are the driving force.</h2>
+
+:::{.fragment}
+They tell us if the code does what we think it does.
+:::
+
+::::
+
+:::{.notes}
+
+This is what Test-Driven means. Tests drive the development process. They tell us what to do next and if the code we implemented does what we wanted to achieve.
+
+:::
+
+# From requirements to tests {auto-animate=true .text-center}
+
+::::{style='display:flex; justify-content:center; align-items:center; width:100%; gap:4rem;'}
+
+::: {.muted}
+
+🙋‍♀️ 💬
+
+🙋‍♂️ 💬
+
+:::
+
+::: {.muted style='display:flex; justify-items:center; align-items:center; height:100%;'}
+
+➡️
+
+:::
+
+::: {.muted}
+
+✅ Pass
+
+✅ Pass
+
+:::
+
+::::
+
+:::{.notes}
+
+So you probably have some requirements from your client that you need to implement. How do we get from there to tests?
+
+:::
+
+# {auto-animate=true}
+
+::::{.grid .grid-cols-1 .grid-rows-1 .place-items-center .text-xl .nonincremental}
+
+- 👍 Examples help us understand the problem.
+- 👎 Abstract descriptions don't.
+
+::::
+
+:::{.notes}
+
+Use specific examples. Those examples are translatable to tests. They will help you understand the problem better.
+
+Abstract descriptions are hard to translate to tests. They are hard to understand and hard to verify.
+
+:::
+
+# 📝 Acceptance criteria {auto-animate=true .top}
+
+::::{.text-xl}
+A list of verifiable statements.
+
+- ☑️ Something **should** do something.
+- ☑️ Something **should** do the other thing.
+
+::::
+
+:::{.fragment}
+
+```r
+describe("something", {
+  it("should do something", {
+    # Arrange
+
+    # Act
+
+    # Assert
+  })
+
+  it("should do the other thing", {
+
+  })
+})
+```
+
+:::
+
+:::{.notes}
+A common way of writing down requirements are acceptance criteria. They are a list of verifiable statements. They should be:
+
+- Clear, so that everyone understands them.
+- Concise, so that there’s no ambiguity.
+
+We can use the format of something should do something when something.
+:::
+
+# 📝 Test cases {auto-animate=true .top}
+
+::::{.text-xl}
+
+:::{}
+
+🎯 Specific for low-level (unit) tests.
+
+:::
+
+:::{}
+
+💬 Abstract for high-level (acceptance) tests.
+
+:::
+
+::::
+
+# 📝 Test cases {auto-animate=true data-transition=none .top}
+
+::::{.text-xl}
+
+:::{.highlight}
+
+🎯 Specific for low-level (unit) tests.
+
+:::
+
+:::{.line-through}
+☑️ It should work correctly.
+:::
+
+:::{.fragment .fade-down}
+☑️ It should throw an error when the table has 1 row.
+:::
+
+:::{.muted}
+
+💬 Abstract for high-level (acceptance) tests.
+
+:::
+
+::::
+
+:::{.notes}
+
+Some tips of writing test cases.
+
+They should be specific for low-level tests, when we have a specific input and output. We should be specific for tests of business logic.
+
+:::
+
+<!-- # 📝 Test cases {auto-animate=false data-auto-animate-restart=true data-transition=none .top} -->
+# 📝 Test cases {auto-animate=true .top}
+
+::::{.text-xl}
+
+:::{.muted}
+
+🎯 Specific for low-level (unit) tests.
+
+:::
+
+<!-- :::{.muted .line-through}
+☑️ It should work correctly.
+:::
+
+:::{.muted}
+☑️ It should throw an error when the table has 1 row.
+::: -->
+
+:::{.highlight}
+
+💬 Abstract for high-level (acceptance) tests.
+
+:::
+
+:::{.line-through}
+☑️ It should render the table after clicking the "Go" button.
+:::
+
+:::{.fragment .fade-down}
+☑️ It should show the summary.
+:::
+
+::::
+
+:::{.notes}
+
+For high-level tests, as test of Shiny modules it's better to make them abstract, so that they will be true even if the implementation details change.
+
+For tests of a Shiny module, don't tie requirements to the UI. Focus on the business goal. Write those requirements such as if you've never heard about buttons, dropdowns or inputs.
+
+This is the key to having test cases decoupled from implementation.
+
+The example requirement would no longer be valid if we changed the label of the button, or if we removed the button altogether.
+
+But the business goal would still be valid. It should show the summary, no matter how it can be achieved.
+:::
+
+# {auto-animate=true}
+
+::::{.grid .grid-cols-1 .grid-rows-1 .place-items-center .text-xl}
+
+<h2>Tests show we solved the problem.</h2>
+
+📝 And document what we solved.
+
+::::
+
+:::{.notes}
+
+So, this means that tests can show that we solved a problem. The will document it, and this documentation will be valid as long as the tests pass. Compared to code comments or other documentations that can get outdated anytime.
+
+:::
+
+# {auto-animate=true .text-center}
+
+::::{.grid .grid-cols-1 .grid-rows-1 .place-items-center .text-xl}
+
+<h2>Drive communication with a client.</h2>
+
+📊 Via executable examples on real data.
+
+::::
+
+:::{.notes}
+
+And this also means that we can use tests to communicate with our clients better. We can cooperate more easily, when there is an executable example of their problem. Tests can empower your client to cooperate with you more closely, by them providing you examples to test.
+
+:::
+
+
+# {auto-animate=true .text-center}
+
+::::{.grid .grid-cols-1 .grid-rows-1 .place-items-center .text-xl}
+
+<h2>TDD x Shiny</h2>
+
+- 📦 The testable unit of an app is a Shiny module.
+
+- ✨ It represents a feature.
+
+- 🖥️ It can be run as a standalone app.
+
+::::
+
+:::{.notes}
+
+So let's see how we can use TDD with Shiny.
+
+There are 3 things we need to know before we start.
+
+1. The testable uning of a Shiny app is a Shiny module.
+2. A module can represent a feature, and by feature I mean a part or the whole problem we're solving with the app.
+3. And that we can easily run modules as standalone Shiny apps.
+
+:::
+
+# ❌ Red {auto-animate=true .top}
+
+::::{.columns}
+
+::: {.column width="50%"}
+
+```{r filename="dataset_summary.R", animateid="code3"}
+#
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r filename="test-dataset_summary.R", animateid="code4"}
+describe("dataset summary", {
+  it("should show the summary", {
+    fail("Not implemented")
+  })
+})
+```
+
+:::
+
+::::
+
+:::{.notes}
+We start from an empty tests. Same as we did in the first example.
+:::
+
+# ❌ Red {auto-animate=true .top}
+
+::::{.columns}
+
+::: {.column width="50%"}
+
+```{r filename="dataset_summary.R", animateid="code3"}
+#
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r filename="test-dataset_summary.R", animateid="code4"}
+#| code-line-numbers: 3-7|8|10|12-13
+describe("dataset summary", {
+  it("should show the summary", {
+    # Arrange
+    app <- shinyApp(
+      ui = dataset_summary_ui(NULL),
+      server = \(input, output) dataset_summary_server(NULL)
+    )
+    page <- DatasetSummary$new(app)
+
+    # Act
+
+    # Assert
+    page$expect_summary_visible()
+    fail("Not implemented")
+  })
+})
+```
+
+:::
+
+::::
+
+:::{.notes}
+1. We start from setting up the environment. We create a Shiny app from the nonexistent module.
+2. Then we create an object that represents the module, it will be a proxy for communicating with the module. We will create it in next steps. For now our only focus is to imagine how we want to use it. We provide human-readable methods that will hide implementation details of the test. This will make tests easier to understand and maintain. Instead of using an object we could use functions. This doesn't matter, do what feels more natural to you. The important part is that we're abstracting the actions we can take on the module.
+3. We don't do anything in the execution part in this test. We test the default behavior, when no actions were taken, so it's about the initial state of the module.
+4. We assert that the summary is visible.
+
+:::
+
+# ❌ Red {auto-animate=true .top}
+
+::::{.columns}
+
+::: {.column width="50%"}
+
+```{r filename="dataset_summary.R", animateid="code3"}
+dataset_summary_ui <- function(id) {
+  fluidPage()
+}
+
+dataset_summary_server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+
+  })
+}
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r filename="test-dataset_summary.R", animateid="code4"}
+describe("dataset summary", {
+  it("should show the summary", {
+    # Arrange
+    app <- shinyApp(
+      ui = dataset_summary_ui(NULL),
+      server = function(input, output) dataset_summary_server(NULL)
+    )
+    page <- DatasetSummary$new(app)
+
+    # Act
+
+    # Assert
+    page$expect_summary_visible()
+    fail("Not implemented")
+  })
+})
+```
+
+:::
+
+::::
+
+:::{.notes}
+When we provide the skeleton of the module, the test failure message changes. Now we need to implement the `DatasetSummary` object.
+:::
+
+
+# ❌ Red {auto-animate=true .top}
+
+::::{.columns}
+
+::: {.column width="50%"}
+
+```{r filename="dataset_summary.R", animateid="code3"}
+dataset_summary_ui <- function(id) {
+  fluidPage()
+}
+
+dataset_summary_server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+
+  })
+}
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r filename="test-dataset_summary.R", animateid="code4"}
+#| cache: true
+#| code-line-numbers: 1-12
+DatasetSummary <- R6::R6Class(
+  classname = "DatasetSummary",
+  public = list(
+    driver = NULL,
+    initialize = function(app) {
+      self$driver <- AppDriver$new(app)
+    },
+    expect_summary_visible = function() {
+
+    }
+  )
+)
+
+describe("dataset summary", {
+  it("should show the summary", {
+    # Arrange
+    app <- shinyApp(
+      ui = dataset_summary_ui(NULL),
+      server = function(input, output) dataset_summary_server(NULL)
+    )
+    page <- DatasetSummary$new(app)
+
+    # Act
+
+    # Assert
+    page$expect_summary_visible()
+    fail("Not implemented")
+  })
+})
+```
+
+:::
+
+::::
+
+:::{.notes}
+This is where shinytest2 comes in handy. We can use it to interact with the app from within DatasetSummary methods. It ensures that no implementation details are leaked into the tests. Everything is contained within this object.
+:::
+
+# ❌ Red {auto-animate=true .top}
+
+::::{.columns}
+
+::: {.column width="50%"}
+
+```{r filename="dataset_summary.R", animateid="code3"}
+dataset_summary_ui <- function(id) {
+  fluidPage()
+}
+
+dataset_summary_server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+
+  })
+}
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r filename="test-dataset_summary.R", animateid="code4"}
+#| cache: true
+#| code-line-numbers: 17-27
+DatasetSummary <- R6::R6Class(
+  classname = "DatasetSummary",
+  public = list(
+    driver = NULL,
+    initialize = function(app) {
+      self$driver <- AppDriver$new(app)
+    },
+    expect_summary_visible = function() {
+
+    }
+  )
+)
+
+describe("dataset summary", {
+  it("should show the summary", {
+    # Arrange
+    app <- shinyApp(
+      ui = dataset_summary_ui(NULL),
+      server = function(input, output) {
+        data_provider <- list(get_summary = \() {
+          iris
+        })
+        dataset_summary_server(NULL, data_provider)
+      }
+    )
+    page <- DatasetSummary$new(app)
+
+    # Act
+
+    # Assert
+    page$expect_summary_visible()
+    fail("Not implemented")
+  })
+})
+```
+
+:::
+
+::::
+
+:::{.notes}
+Now we may realize, that we need data to show the summary. We can provide it through a data provider object. This could be an existing object in the app, or if we're starting a new app, this can be a fake object that represents a way of getting the data. This way we can test the module in isolation, without the access to the real data. What matters is the interface.
+
+So this data provider just serves the iris dataset via it's get_summary method. The module doesn't know how the data is provided, it just needs to know how to get it. It could be from disk, from a database, it doesn't matter here.
+:::
+
+# ❌ Red {auto-animate=true .top}
+
+::::{.columns}
+
+::: {.column width="50%"}
+
+```{r filename="dataset_summary.R", animateid="code3"}
+dataset_summary_ui <- function(id) {
+  fluidPage()
+}
+
+dataset_summary_server <- function(id, data_provider) {
+  moduleServer(id, function(input, output, session) {
+
+  })
+}
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r filename="test-dataset_summary.R", animateid="code4"}
+#| cache: true
+#| code-line-numbers: 17-25
+DatasetSummary <- R6::R6Class(
+  classname = "DatasetSummary",
+  public = list(
+    driver = NULL,
+    initialize = function(app) {
+      self$driver <- AppDriver$new(app)
+    },
+    expect_summary_visible = function() {
+
+    }
+  )
+)
+
+describe("dataset summary", {
+  it("should show the summary", {
+    # Arrange
+    app <- shinyApp(
+      ui = dataset_summary_ui(NULL),
+      server = function(input, output) {
+        data_provider <- list(get_summary = \() {
+          iris
+        })
+        dataset_summary_server(NULL, data_provider)
+      }
+    )
+    page <- DatasetSummary$new(app)
+
+    # Act
+
+    # Assert
+    page$expect_summary_visible()
+    fail("Not implemented")
+  })
+})
+```
+
+:::
+
+::::
+
+:::{.notes}
+Here we're evolving the interface of our module so that the data_provider can be passed to it.
+:::
+
+# ❌ Red {auto-animate=true .top}
+
+::::{.columns}
+
+::: {.column width="50%"}
+
+```{r filename="dataset_summary.R", animateid="code3"}
+dataset_summary_ui <- function(id) {
+  fluidPage()
+}
+
+dataset_summary_server <- function(id, data_provider) {
+  moduleServer(id, function(input, output, session) {
+
+  })
+}
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r filename="test-dataset_summary.R", animateid="code4"}
+#| cache: true
+#| code-line-numbers: 13-17
+DatasetSummary <- R6::R6Class(
+  classname = "DatasetSummary",
+  public = list(
+    driver = NULL,
+    selenider = NULL,
+    initialize = function(app) {
+      self$driver <- AppDriver$new(app)
+      self$selenider <- selenider_session(
+        driver = self$driver,
+        local = FALSE
+      )
+    },
+    expect_summary_visible = function() {
+      find_element(self$selenider, css = "#summary > table") |>
+        elem_expect(is_visible) |>
+        elem_expect(\(x) has_at_least(elem_children(x), 1))
+    }
+  )
+)
+
+describe("dataset summary", {
+  it("should show the summary", {
+    # Arrange
+    app <- shinyApp(
+      ui = dataset_summary_ui(NULL),
+      server = function(input, output) {
+        data_provider <- list(
+          get_summary = function() {
+            iris
+          }
+        )
+        dataset_summary_server(NULL, data_provider)
+      }
+    )
+    page <- DatasetSummary$new(app)
+
+    # Act
+
+    # Assert
+    page$expect_summary_visible()
+  })
+})
+```
+:::
+
+::::
+
+:::{.notes}
+Next we can focus on the assertion.
+
+Think for a moment what outcome means that you met your objective.
+
+In this case, asserting that the table is visible and that it has at least one row is a good way to ensure that the summary is shown.
+
+Notice how this assertion is in a method. This way we can reuse it in other test cases. If at any point in time, our undestanding changes, we can change the implementation of this method, and all tests will be updated.
+
+Pay attention to the name of the method. It's abstract, it doesn't mention the UI, that it's a table. If we decide to show the summary as a plot, this would still be valid. It's the same business goal, no matter how it's implemented.
+:::
+
+# ✅ Green {auto-animate=true .top}
+
+::::{.columns}
+
+::: {.column width="50%"}
+
+```{r filename="dataset_summary.R", animateid="code3"}
+dataset_summary_ui <- function(id) {
+  ns <- NS(id)
+  fluidPage(
+    tableOutput(ns("summary"))
+  )
+}
+
+dataset_summary_server <- function(id, data_provider) {
+  moduleServer(id, function(input, output, session) {
+    output$summary <- renderTable({
+      data_provider$get_summary()
+    })
+  })
+}
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r filename="test-dataset_summary.R", animateid="code4"}
+#| cache: true
+#| code-height: "700px"
+#| code-line-numbers: 13-17|40
+DatasetSummary <- R6::R6Class(
+  classname = "DatasetSummary",
+  public = list(
+    driver = NULL,
+    selenider = NULL,
+    initialize = function(app) {
+      self$driver <- AppDriver$new(app)
+      self$selenider <- selenider_session(
+        driver = self$driver,
+        local = FALSE
+      )
+    },
+    expect_summary_visible = function() {
+      find_element(self$selenider, css = "#summary > table") |>
+        elem_expect(is_visible) |>
+        elem_expect(\(x) has_at_least(elem_children(x), 1))
+    }
+  )
+)
+
+describe("dataset summary", {
+  it("should show the summary", {
+    # Arrange
+    app <- shinyApp(
+      ui = dataset_summary_ui(NULL),
+      server = function(input, output) {
+        data_provider <- list(
+          get_summary = function() {
+            iris
+          }
+        )
+        dataset_summary_server(NULL, data_provider)
+      }
+    )
+    page <- DatasetSummary$new(app)
+
+    # Act
+
+    # Assert
+    page$expect_summary_visible()
+  })
+})
+```
+:::
+
+::::
+
+:::{.notes}
+Once we have the assertion in place, we can implement the module to satisfy the tests.
+
+Notice how here we're testing just the module with a fake data provider. The actual data provider object should be tested in isolation.
+:::
+
+# 🔁 Refactor – UI 🖼️ {auto-animate=true .top}
+
+::::{.columns}
+
+::: {.column width="50%"}
+
+:::{.fragment .semi-fade-out}
+
+```{r filename="dataset_summary.R", animateid="code3"}
+dataset_summary_ui <- function(id) {
+  ns <- NS(id)
+  fluidPage(
+    tableOutput(ns("summary"))
+  )
+}
+
+dataset_summary_server <- function(id, data_provider) {
+  moduleServer(id, function(input, output, session) {
+    output$summary <- renderTable({
+      data_provider$get_summary()
+    })
+  })
+}
+```
+
+:::
+
+<div class="fragment absolute left-[-180px] top-[100px]"><img src="./assets/app_pills.png"/></div>
+
+:::
+
+::: {.column width="50%"}
+
+```{r filename="test-dataset_summary.R", animateid="code4"}
+#| cache: true
+#| code-height: "700px"
+#| code-line-numbers: 1-13
+if (interactive()) {
+  shinyApp(
+    ui = dataset_summary_ui(NULL),
+    server = function(input, output) {
+      data_provider <- list(
+        get_summary = function() {
+          iris
+        }
+      )
+      dataset_summary_server(NULL, data_provider)
+    }
+  )
+}
+
+DatasetSummary <- R6::R6Class(
+  classname = "DatasetSummary",
+  public = list(
+    driver = NULL,
+    selenider = NULL,
+    initialize = function(app) {
+      self$driver <- AppDriver$new(app)
+      self$selenider <- selenider_session(
+        driver = self$driver,
+        local = FALSE
+      )
+    },
+    expect_summary_visible = function() {
+      find_element(self$selenider, css = "#summary > table") |>
+        elem_expect(is_visible) |>
+        elem_expect(\(x) has_at_least(elem_children(x), 1))
+    }
+  )
+)
+
+describe("dataset summary", {
+  it("should show the summary", {
+    # Arrange
+    app <- shinyApp(
+      ui = dataset_summary_ui(NULL),
+      server = function(input, output) {
+        data_provider <- list(
+          get_summary = function() {
+            iris
+          }
+        )
+        dataset_summary_server(NULL, data_provider)
+      }
+    )
+    page <- DatasetSummary$new(app)
+
+    # Act
+
+    # Assert
+    page$expect_summary_visible()
+  })
+})
+```
+:::
+
+::::
+
+:::{.notes}
+
+By adding a call to a Shiny app, using the same setup as in a test, we can run it interactively. This way we can quickly iterate over the design and make the interface more usable and beautiful faster, without having to run the whole app.
+
+We can also use this for manual exploratory testing or for interactive debugging. This test file is our entry point to the module.
+
+:::
+
+# {auto-animate=true data-transition="none" .top .h-full}
+
+::::{.grid .grid-cols-3 .grid-rows-2 .gap-4 .items-start .my-8}
+
+:::{.box .module data-id="box1"}
+
+Feature 👔
+
+<p class="green"></p>
+
+<p class="fragment red">
+  <p class="fragment green"></p>
+</p>
+
+<p class="fragment red">
+  <p class="fragment green"></p>
+</p>
+
+<p class="fragment red">
+  <p class="fragment green"></p>
+</p>
+
+:::
+
+:::{.box .module .fragment data-id="box2"}
+
+Feature 👔
+
+<p class="fragment red">
+  <p class="fragment green"></p>
+</p>
+
+:::
+
+:::{.box .module .fragment data-id="box3"}
+
+Feature 👔
+
+<p class="fragment red">
+  <p class="fragment green"></p>
+</p>
+
+:::
+
+:::{.box .fragment .fade-up .col-span-3 .text-center .h-full .content-center data-id="box4"}
+
+<p class="text-white text-2xl"> 🧪 Unit tests </p>
+
+:::
+
+::::
+
+:::{.notes}
+So we've developed one feature. We can expand it with new specification. We can also add new features. Those are high-level tests of Shiny modules, that check if the business goal is achieved. This is supplemented be regular, low-level unit testing that validate business logic.
+
+We end up with tests for all building blocks of the app. We develop and test the parts separately. The sum of the parts is the whole app. This approach helps us maintain development speed, even as the app grows.
+:::
+
+# {auto-animate=true}
+
+::::{.grid .grid-cols-2 .grid-rows-1 .place-items-center .text-xl}
+
+<div>
+<h2>Why use TDD?</h2>
+</div>
+
+<div class="justify-self-start">
+
+:::{.fragment}
+🏎️ Faster development cycles.
+:::
+
+:::{.fragment}
+🧠 Understanding the problem.
+:::
+
+:::{.fragment}
+🛡️ Confidence that it works.
+:::
+
+</div>
+
+::::
+
+
+:::{.notes}
+So why should you give it a try?
+
+1. To have faster development cycles, with clear feedback.
+2. To understand the problem better. It will prevent you from solving something that you didn't understand first.
+3. To have confidence that what you're developing is what you need. Also, to have confidence that if you change something, the rest doesn't fall apart.
+
+:::
+
+# {auto-animate=true .text-xl}
+
+::::{.flex .flex-col .items-center}
+
+:::{.flex .items-center .gap-4}
+
+<h2>Thank you!</h2>
+
+<img src="./assets/avatar.jpg" class="clip-avatar" style="height: 400px;"/>
+
+:::
+
+:::{}
+
+<ul class="nonincremental">
+  <li class="flex items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="black" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></svg>
+
+    [linkedin.com/in/jakub-sobolewski-r/](https://www.linkedin.com/in/jakub-sobolewski-r/)
+  </li>
+  <li class="flex items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="black" d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m2.5 12A1.5 1.5 0 0 0 6 16.5A1.5 1.5 0 0 0 7.5 18A1.5 1.5 0 0 0 9 16.5A1.5 1.5 0 0 0 7.5 15M6 10v2a6 6 0 0 1 6 6h2a8 8 0 0 0-8-8m0-4v2a10 10 0 0 1 10 10h2A12 12 0 0 0 6 6"/></svg>
+
+    [jakubsob.github.io/blog](https://jakubsob.github.io/blog/)
+  </li>
+</ul>
+
+:::
+
+::::
+
+:::{.notes}
+
+Thank you for joining me today. If you want to read more about TDD, feel free to follow me on linkedin where I post about it from time to time.
+
+You can also check my blog, where I collect all the content I've written so far.
+
+:::
+
+<script src="script.js"></script>
