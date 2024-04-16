@@ -391,7 +391,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section class="title-slide center" id="title-slide" data-notes="<p>Hello everyone, I’m Jakub Sobolewski, I’m a Senior R/Shiny developer at Appsilon. I’ve been using TDD for almost 3 years. I used it in a variety of projects, from small prototypes developed in 2 weeks, to huge apps developed over many months. I used in huge legacy apps with no tests at all too. Whichever the case, TDD helped me work faster and with more confidence. Let’s see how it can help us work with Shiny. I hope that by the end you’ll see that tests can be fun and an integral part of our development process.</p>">
+<section class="title-slide center" id="title-slide" data-notes="<p>Hello everyone, I’m Jakub Sobolewski, I’m a Senior R/Shiny developer at Appsilon. I’ve been using TDD for almost 3 years. I used it in a variety of projects, from small prototypes developed in 2 weeks, to huge apps developed over many months. Whichever the case, TDD helped me work faster and with more confidence in the code. In this presentation I want to show you how to use TDD effectively to develop Shiny apps. I hope that by the end you’ll see that tests can be fun and an integral part of our development process.</p>">
 <img src="./assets/appsilon_logo.png" alt="logo" class="logo">
 <h1 class="title">Getting The Most Out Of <br> Test-Driven Development For Shiny</h1>
 <div>
@@ -434,7 +434,7 @@ What is TDD?
 <p>📈 A guided evolution.</p>
 </div>
 <div class="fragment">
-<p>🧪 Write tests first.</p>
+<p>🧪 Tests first.</p>
 </div>
 </div>
 </div>
@@ -515,12 +515,12 @@ What is TDD?
 </div>
 <aside class="notes">
 <ol type="1">
-<li>Green - once we have at least one failing test, we can write production code to satisfy them.</li>
+<li>Green - once we have at least one failing test, we can write production code to satisfy it.</li>
 </ol>
 <p>Since we have the tests, we can run them as often as we need. We have a reporoducible way to check if the code works as expected. We don’t need to setup the environment by hand or do a lot of clicking in the app.</p>
 <p>If the code does what we want it to, the tests will pass.</p>
-<ol type="1">
-<li>We write only as much production code as needed to make the tests pass. Why would we write more, if tests already pass? You Ain’t Gonna Need It.</li>
+<ol start="2" type="1">
+<li>We write only as much production code as needed to make the tests pass. Why would we write more, if tests are already satisfied? Dont do it, You Ain’t Gonna Need It.</li>
 </ol>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -554,8 +554,8 @@ What is TDD?
 </div>
 <aside class="notes">
 <ol type="1">
-<li><p>Refactor - Were you ever afraid of refactoring your code because you were afraid of breaking it? In TDD we don’t have this problem. We have tests that ensure that the code works as expected.</p></li>
-<li><p>We don’t only want to have working code, we want to have good code. One that is maintainable and readable. We can spend some time in this step to make sure our code is clean and easy to understand.</p></li>
+<li><p>Refactor - Were you ever afraid of refactoring your code because you were afraid of breaking it? TDD helps you mitigate this problem. We have tests that ensure that the code works as expected.</p></li>
+<li><p>We don’t only want to have working code, we want to have good code. We can spend some time in this step to make sure our code is clean and easy to understand.</p></li>
 </ol>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -573,7 +573,7 @@ What is TDD?
 <section id="section-1" class="title-slide slide level1 center" data-auto-animate="true">
 <h1 data-id="quarto-animate-title"></h1>
 <div class="grid grid-cols-5 grid-rows-1 place-items-center">
-<div class="col-span-2">
+<div class="col-span-2 justify-self-end">
 <h1>
 Example
 </h1>
@@ -618,13 +618,13 @@ Example
 <pre><strong>test-sum.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb2" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
-<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum of two numbers"</span>, {</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
 <span id="cb2-3"><a href="#cb2-3"></a>    <span class="fu">fail</span>(<span class="st">"Not implemented"</span>)</span>
 <span id="cb2-4"><a href="#cb2-4"></a>  })</span>
 <span id="cb2-5"><a href="#cb2-5"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>── Failure: my_sum: should calculate the sum of two numbers ────────────────────
+<pre><code>── Failure: my_sum: should calculate the sum for multiple numbers ──────────────
 Not implemented</code></pre>
 </div>
 <div class="cell-output cell-output-error">
@@ -638,7 +638,7 @@ Not implemented</code></pre>
 <ol type="1">
 <li>We focus on the first behavior we want to implement. This can be the simplest case, just to get us started.</li>
 </ol>
-<p>We have this empty tests, where do we even start?</p>
+<p>So, we have this empty tests, where do we even start?</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -671,7 +671,7 @@ Not implemented</code></pre>
 <pre><strong>test-sum.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb6" data-code-line-numbers="1-12|3-4|6-7|9-10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum of two numbers"</span>, {</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
 <span id="cb6-3"><a href="#cb6-3"></a>    <span class="co"># Arrange</span></span>
 <span id="cb6-4"><a href="#cb6-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
 <span id="cb6-5"><a href="#cb6-5"></a></span>
@@ -684,7 +684,7 @@ Not implemented</code></pre>
 <span id="cb6-12"><a href="#cb6-12"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>── Error: my_sum: should calculate the sum of two numbers ──────────────────────
+<pre><code>── Error: my_sum: should calculate the sum for multiple numbers ────────────────
 Error in `my_sum(numbers)`: could not find function "my_sum"</code></pre>
 </div>
 <div class="cell-output cell-output-error">
@@ -707,22 +707,20 @@ Error in `my_sum(numbers)`: could not find function "my_sum"</code></pre>
 <ol type="1">
 <li>We start with the setup.</li>
 </ol>
-<p>#Arrange is where we prepare the environment. This is where we need to figure out the inputs we need to solve the problem.</p>
-<p>Why this is great? At this stage, we still focus on what we need to be able to solve the problem. Not how we will solve it.</p>
+<p>#Arrange is where we prepare the environment. This is where we need to figure out the inputs required to solve the problem.</p>
+<p>This is very powerful, why? At this stage, we still focus on what we need to be able to solve the problem. Not how we will solve it.</p>
 <p>Without understanding the problem we won’t be able write down the test. And this is good, we won’t write any production code until we have the understanding of the problem. This helps us mitigate the risk of implementing the wrong solution.</p>
 <ol type="1">
 <li>#Act is where we call our code.</li>
 </ol>
 <p>TDD gives us the freedom to experiment with interfaces.</p>
 <p>We can try out a few different approaches even before we start writing the production code, possibly saving a lot of time on refactoring.</p>
-<p>The test you write is the first user of your code. The way you call your code from tests is the way you want to call it from the production code. So, think about how you want to use your code before you write it.</p>
-<p>This approach helps you make your functions and objects simple, no redundant parametrization or options.</p>
-<p>At this point it’s difficult to make code more complex. We focus on getting the job done, not overengineering and future-proofing.</p>
-<ol start="4" type="1">
+<p>The test you write is the first user of your code. The way you call your code from tests is the way you will call it from the production code. So, think about how you want to use your code before you write it.</p>
+<ol type="1">
 <li>In #Assert we focus on how to observe that the code works as expected.</li>
 </ol>
 <p>Again, we won’t be able to do it without understanding the problem. We don’t start writing production code until we know what we want to achieve.</p>
-<p>In TDD we first define inputs and outputs, treating the not-yet-existing code as a black box that we will add later.</p>
+<p>In TDD we first define inputs and outputs, treating the not-yet-existing code as a black box.</p>
 <p>This approach produces tests that don’t test implementation details. It’s impossible to do so since there is no implementation yet!</p>
 <p>This ensures we focus on behavior of the code in our test.</p>
 <style type="text/css">
@@ -759,7 +757,7 @@ Error in `my_sum(numbers)`: could not find function "my_sum"</code></pre>
 <pre><strong>test-sum.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb10" data-code-line-numbers="1-12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
-<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum of two numbers"</span>, {</span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
 <span id="cb10-3"><a href="#cb10-3"></a>    <span class="co"># Arrange</span></span>
 <span id="cb10-4"><a href="#cb10-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
 <span id="cb10-5"><a href="#cb10-5"></a></span>
@@ -772,7 +770,7 @@ Error in `my_sum(numbers)`: could not find function "my_sum"</code></pre>
 <span id="cb10-12"><a href="#cb10-12"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>── Failure: my_sum: should calculate the sum of two numbers ────────────────────
+<pre><code>── Failure: my_sum: should calculate the sum for multiple numbers ──────────────
 `result` not equal to 3.
 target is NULL, current is numeric</code></pre>
 </div>
@@ -820,7 +818,7 @@ target is NULL, current is numeric</code></pre>
 <pre><strong>test-sum.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
-<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum of two numbers"</span>, {</span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
 <span id="cb14-3"><a href="#cb14-3"></a>    <span class="co"># Arrange</span></span>
 <span id="cb14-4"><a href="#cb14-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
 <span id="cb14-5"><a href="#cb14-5"></a></span>
@@ -833,7 +831,7 @@ target is NULL, current is numeric</code></pre>
 <span id="cb14-12"><a href="#cb14-12"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed 🎊</code></pre>
+<pre><code>Test passed 🥳</code></pre>
 </div>
 </div>
 </div>
@@ -874,7 +872,7 @@ target is NULL, current is numeric</code></pre>
 <pre><strong>test-sum.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb17" data-code-line-numbers="1-23|13-22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
-<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum of two numbers"</span>, {</span>
+<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
 <span id="cb17-3"><a href="#cb17-3"></a>    <span class="co"># Arrange</span></span>
 <span id="cb17-4"><a href="#cb17-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
 <span id="cb17-5"><a href="#cb17-5"></a></span>
@@ -885,7 +883,7 @@ target is NULL, current is numeric</code></pre>
 <span id="cb17-10"><a href="#cb17-10"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">3</span>)</span>
 <span id="cb17-11"><a href="#cb17-11"></a>  })</span>
 <span id="cb17-12"><a href="#cb17-12"></a></span>
-<span id="cb17-13"><a href="#cb17-13"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum of one number"</span>, {</span>
+<span id="cb17-13"><a href="#cb17-13"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for one number"</span>, {</span>
 <span id="cb17-14"><a href="#cb17-14"></a>    <span class="co"># Arrange</span></span>
 <span id="cb17-15"><a href="#cb17-15"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>)</span>
 <span id="cb17-16"><a href="#cb17-16"></a></span>
@@ -898,8 +896,8 @@ target is NULL, current is numeric</code></pre>
 <span id="cb17-23"><a href="#cb17-23"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed 🎊
-── Failure: my_sum: should calculate the sum of one number ─────────────────────
+<pre><code>Test passed 🎉
+── Failure: my_sum: should calculate the sum for one number ────────────────────
 `result` not equal to 1.
 1/1 mismatches
 [1] 3 - 1 == 2</code></pre>
@@ -954,7 +952,7 @@ target is NULL, current is numeric</code></pre>
 <pre><strong>test-sum.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
-<span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum of two numbers"</span>, {</span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
 <span id="cb21-3"><a href="#cb21-3"></a>    <span class="co"># Arrange</span></span>
 <span id="cb21-4"><a href="#cb21-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
 <span id="cb21-5"><a href="#cb21-5"></a></span>
@@ -965,7 +963,7 @@ target is NULL, current is numeric</code></pre>
 <span id="cb21-10"><a href="#cb21-10"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">3</span>)</span>
 <span id="cb21-11"><a href="#cb21-11"></a>  })</span>
 <span id="cb21-12"><a href="#cb21-12"></a></span>
-<span id="cb21-13"><a href="#cb21-13"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum of one number"</span>, {</span>
+<span id="cb21-13"><a href="#cb21-13"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for one number"</span>, {</span>
 <span id="cb21-14"><a href="#cb21-14"></a>    <span class="co"># Arrange</span></span>
 <span id="cb21-15"><a href="#cb21-15"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>)</span>
 <span id="cb21-16"><a href="#cb21-16"></a></span>
@@ -978,8 +976,8 @@ target is NULL, current is numeric</code></pre>
 <span id="cb21-23"><a href="#cb21-23"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed 🎊
-Test passed 😀</code></pre>
+<pre><code>Test passed 🥇
+Test passed 🎊</code></pre>
 </div>
 </div>
 </div>
@@ -1007,7 +1005,7 @@ Test passed 😀</code></pre>
 <pre><strong>test-sum.R</strong></pre>
 </div>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
-<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum of two numbers"</span>, {</span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
 <span id="cb24-3"><a href="#cb24-3"></a>    <span class="co"># Arrange</span></span>
 <span id="cb24-4"><a href="#cb24-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
 <span id="cb24-5"><a href="#cb24-5"></a></span>
@@ -1018,7 +1016,7 @@ Test passed 😀</code></pre>
 <span id="cb24-10"><a href="#cb24-10"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">3</span>)</span>
 <span id="cb24-11"><a href="#cb24-11"></a>  })</span>
 <span id="cb24-12"><a href="#cb24-12"></a></span>
-<span id="cb24-13"><a href="#cb24-13"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum of one number"</span>, {</span>
+<span id="cb24-13"><a href="#cb24-13"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for one number"</span>, {</span>
 <span id="cb24-14"><a href="#cb24-14"></a>    <span class="co"># Arrange</span></span>
 <span id="cb24-15"><a href="#cb24-15"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>)</span>
 <span id="cb24-16"><a href="#cb24-16"></a></span>
@@ -1032,14 +1030,13 @@ Test passed 😀</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Test passed 😀
-Test passed 🎉</code></pre>
+Test passed 🥇</code></pre>
 </div>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>Notice how the test cases document how the function works. How one can use this function.</p>
-<p>They describe in which circumstances the function should work, not how it should work.</p>
+<p>After we have the tests passing, we can refactor the code to make it cleaner or more efficient.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1106,7 +1103,7 @@ Test passed 🎉</code></pre>
 <p>Describe behavior from user perspective. 🙌</p>
 </div>
 <div class="fragment">
-<p>Fill in the gaps until tests pass. 🧱</p>
+<p>Fill in the gaps until tests pass. 🧩</p>
 </div>
 </div>
 <aside class="notes">
@@ -1114,6 +1111,7 @@ Test passed 🎉</code></pre>
 <li>We focus on high-level objectives first.</li>
 <li>We describe the behavior from the user perspective. If it’s a Shiny app, this is the perspective of the user interacting with the app. If it’s a package, this is a perspective of the user using the functions exported from the package.</li>
 </ol>
+<p>So how do we choose the approach?</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1131,24 +1129,48 @@ Test passed 🎉</code></pre>
 <h1 data-id="quarto-animate-title"></h1>
 <div class="grid grid-cols-1 grid-rows-1 place-items-center text-xl">
 <h2>
-🏎️ Do what helps you move fast.
+🏎️ We do what helps us move fast.
 </h2>
-<div class="fragment">
-<p>Different problems may require different approaches.</p>
 </div>
-</div>
+<aside class="notes">
+<p>If we’re developing a Shiny module a list of user behaviors we want to implement can be more useful.</p>
+<p>If we’re developing a computation of a complex algorithm, you might want to start from the smallest piece of the algorithm and build up from there.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 
 <section id="section-4" class="title-slide slide level1 center" data-auto-animate="true">
 <h1 data-id="quarto-animate-title"></h1>
 <div class="grid grid-cols-1 grid-rows-1 place-items-center text-xl">
 <h2>
-🧪 Use tests as the driving force.
+🧪 Tests are the driving force.
 </h2>
 <div class="fragment">
-<p>They tell you if your code does what you think it does.</p>
+<p>They tell us if the code does what we think it does.</p>
 </div>
 </div>
+<aside class="notes">
+<p>This is what Test-Driven means. They drive the development process. They tell us what to do next and if the code we implemented does what we wanted to achieve.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 
 <section id="from-requirements-to-tests" class="title-slide slide level1 text-center center" data-auto-animate="true">
@@ -1157,13 +1179,11 @@ Test passed 🎉</code></pre>
 <div class="muted">
 <p>🙋‍♀️ 💬</p>
 <p>🙋‍♂️ 💬</p>
-<p>🙋 💬</p>
 </div>
 <div class="muted" style="display:flex; justify-items:center; align-items:center; height:100%;">
 <p>➡️</p>
 </div>
 <div class="muted">
-<p>✅ Pass</p>
 <p>✅ Pass</p>
 <p>✅ Pass</p>
 </div>
@@ -1173,21 +1193,24 @@ Test passed 🎉</code></pre>
 <section id="section-5" class="title-slide slide level1 center" data-auto-animate="true">
 <h1 data-id="quarto-animate-title"></h1>
 <div class="grid grid-cols-1 grid-rows-1 place-items-center text-xl">
-<p>👍 Examples help us understand the problem.</p>
-<p>👎 Abstract descriptions don’t.</p>
+<ul>
+<li>👍 Examples help us understand the problem.</li>
+<li>👎 Abstract descriptions don’t.</li>
+</ul>
 </div>
 </section>
 
 <section id="acceptance-criteria" class="title-slide slide level1 top center" data-auto-animate="true">
-<h1 data-id="quarto-animate-title">Acceptance criteria</h1>
+<h1 data-id="quarto-animate-title">📝 Acceptance criteria</h1>
 <div class="text-xl">
+<p>A list of verifiable statements.</p>
 <ul>
 <li class="fragment">☑️ Something <strong>should</strong> do something.</li>
 <li class="fragment">☑️ Something <strong>should</strong> do the other thing.</li>
 </ul>
 </div>
 <div class="fragment">
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb26-1" class="hljs-ln-code"><a href="#cb26-1"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb26-1" class="hljs-ln-code"><a href="#cb26-1"></a><span class="fu">describe</span>(<span class="st">"something"</span>, {</span>
 <span id="cb26-2" class="hljs-ln-code"><a href="#cb26-2"></a>  <span class="fu">it</span>(<span class="st">"should do something"</span>, {</span>
 <span id="cb26-3" class="hljs-ln-code"><a href="#cb26-3"></a>    <span class="co"># Arrange</span></span>
 <span id="cb26-4" class="hljs-ln-code"><a href="#cb26-4"></a></span>
@@ -1220,14 +1243,86 @@ Test passed 🎉</code></pre>
       }</style></aside>
 </section>
 
-<section id="acceptance-criteria-1" class="title-slide slide level1 top center" data-auto-animate="true">
-<h1 data-id="quarto-animate-title">Acceptance criteria</h1>
+<section id="test-cases" class="title-slide slide level1 top center" data-auto-animate="true">
+<h1 data-id="quarto-animate-title">📝 Test cases</h1>
 <div class="text-xl">
-<ul>
-<li class="fragment">☑️ After clicking this button it should do something.</li>
-</ul>
-<p>Make them abstract so that they will be true even if the implementation changes.</p>
+<div>
+<p>🎯 Specific for low-level (unit) tests.</p>
 </div>
+<div>
+<p>💬 Abstract for high-level (acceptance) tests.</p>
+</div>
+</div>
+</section>
+
+<section id="test-cases-1" class="title-slide slide level1 top center" data-auto-animate="true" data-transition="none">
+<h1 data-id="quarto-animate-title">📝 Test cases</h1>
+<div class="text-xl">
+<div class="highlight">
+<p>🎯 Specific for low-level (unit) tests.</p>
+</div>
+<div class="fragment fade-down line-through">
+<p>☑️ It should work correctly.</p>
+</div>
+<div class="fragment fade-down">
+<p>☑️ It should calculate the <em>thing</em> when <em>something</em>.</p>
+</div>
+<div class="muted">
+<p>💬 Abstract for high-level (acceptance) tests.</p>
+</div>
+</div>
+<aside class="notes">
+<p>Focus on cases that represent a class of problems. Don’t iterate over all possible combinations of inputs, most probably you don’t need that. Use chicken counting, one, two, many.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="test-cases-2" class="title-slide slide level1 top center" data-auto-animate="false" data-auto-animate-restart="true" data-transition="none">
+<h1 data-id="quarto-animate-title">📝 Test cases</h1>
+<div class="text-xl">
+<div class="muted">
+<p>🎯 Specific for low-level (unit) tests.</p>
+</div>
+<div class="muted line-through">
+<p>☑️ It should work correctly.</p>
+</div>
+<div class="muted">
+<p>☑️ It should calculate the <em>thing</em> when <em>something</em>.</p>
+</div>
+<div class="highlight">
+<p>💬 Abstract for high-level (acceptance) tests.</p>
+</div>
+<div class="fragment fade-down line-through">
+<p>☑️ It should render the table after clicking the “Go” button.</p>
+</div>
+<div class="fragment fade-down">
+<p>☑️ It should <em>show the summary</em>.</p>
+</div>
+</div>
+<aside class="notes">
+<p>Make them abstract so that they will be true even if the implementation details change.</p>
+<p>If it’s a specification for a Shiny module, don’t tie requirements to the UI. Focus on the business goal. Write those requirements such as if you’ve never heard about graphical interface.</p>
+<p>This is the key to having test cases decoupled from implementation.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 
 <section id="section-6" class="title-slide slide level1 center" data-auto-animate="true">
@@ -1254,13 +1349,18 @@ Drive communication with a client.
 
 
 
-<section id="tdd-x-shiny" class="title-slide slide level1 text-center center" data-auto-animate="true">
-<h1 data-id="quarto-animate-title">TDD x Shiny</h1>
+<section id="section-9" class="title-slide slide level1 text-center center" data-auto-animate="true">
+<h1 data-id="quarto-animate-title"></h1>
+<div class="grid grid-cols-1 grid-rows-1 place-items-center text-xl">
+<h2>
+TDD x Shiny
+</h2>
 <ul>
 <li class="fragment"><p>📦 The testable unit of an app is a Shiny module.</p></li>
 <li class="fragment"><p>✨ It represents a feature.</p></li>
 <li class="fragment"><p>🖥️ It can be run as a standalone app.</p></li>
 </ul>
+</div>
 </section>
 
 <section id="red-4" class="title-slide slide level1 top center" data-auto-animate="true">
@@ -1876,7 +1976,7 @@ Backtrace:
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div class="cell" data-animateid="code4" data-hash="index_cache/revealjs/unnamed-chunk-31_29676bb7da1ee383148ba2184bf4806c">
+<div class="cell" data-animateid="code4" data-code-height="700px" data-hash="index_cache/revealjs/unnamed-chunk-31_c209a45cbfd3150ad9c02c5f8627b677">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>test-dataset_summary.R</strong></pre>
@@ -1925,15 +2025,14 @@ Backtrace:
 <span id="cb56-42"><a href="#cb56-42"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed 🎉</code></pre>
+<pre><code>Test passed 🥳</code></pre>
 </div>
 </div>
 </div>
 </div>
 <aside class="notes">
 <p>Once we have the assertion in place, we can implement the module to satisfy the tests.</p>
-<p>Note on UI:</p>
-<p>run the app interactively</p>
+<p>Notice how here we’re testing just the module with a fake data provider. The actual object should be tested in isolation.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1948,10 +2047,9 @@ Backtrace:
 </section>
 
 <section id="refactor-ui" class="title-slide slide level1 top center" data-auto-animate="true">
-<h1 data-id="quarto-animate-title">🔁 🖼️ Refactor UI</h1>
+<h1 data-id="quarto-animate-title">🔁 Refactor – UI 🖼️</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="r-stack place-content-start">
 <div class="fragment semi-fade-out">
 <div class="cell" data-animateid="code3">
 <div class="code-with-filename">
@@ -1978,9 +2076,8 @@ Backtrace:
 <div class="fragment absolute left-[-180px] top-[100px]" style="">
 <img src="./assets/app_pills.png">
 </div>
-</div>
 </div><div class="column" style="width:50%;">
-<div class="cell" data-animateid="code4" data-hash="index_cache/revealjs/unnamed-chunk-33_82087b416c0089cbfe0b87a8a50b32ee">
+<div class="cell" data-animateid="code4" data-code-height="700px" data-hash="index_cache/revealjs/unnamed-chunk-33_b70dfb8e44a70943a182de0476bb9411">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>test-dataset_summary.R</strong></pre>
@@ -2043,14 +2140,28 @@ Backtrace:
 <span id="cb59-56"><a href="#cb59-56"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed 🥇</code></pre>
+<pre><code>Test passed 🌈</code></pre>
 </div>
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>By adding a call to a Shiny app, we can run it interactively. This way we can see if the UI looks as expected. We can quickly iterate over the design and make the interface more usable and beautiful faster.</p>
+<p>We can also use this for manual exploratory testing or for interactive debugging. This is our entry point to the module.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 
-<section id="section-9" class="title-slide slide level1 top h-full center" data-auto-animate="true" data-transition="none">
+<section id="section-10" class="title-slide slide level1 top h-full center" data-auto-animate="true" data-transition="none">
 <h1 data-id="quarto-animate-title"></h1>
 <div class="grid grid-cols-3 grid-rows-2 gap-4 items-start my-8">
 <div class="box module" data-id="box1">
@@ -2091,10 +2202,9 @@ Backtrace:
 </div>
 </div>
 <aside class="notes">
-<p>We end up with tests of building blocks of the app.</p>
-<p>We split the app into smaller parts that we can develop in isolation.</p>
-<p>We can test the parts separately.</p>
-<p>The sum of the parts is the whole app.</p>
+<p>So we’ve developed one feature. We can expand it with new specification. We can also add new features. Those are high-level tests of Shiny modules, that check if the business goal is achieved. This is supplemented be regular, low-level unit testing.</p>
+<p>We end up with tests for all building blocks of the app. We develop and test the parts separately. The sum of the parts is the whole app.</p>
+<p>This architecture helps us move fast, even if there are a lot of features. With each one of them having tests that document what they do.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -2108,7 +2218,7 @@ Backtrace:
       }</style></aside>
 </section>
 
-<section id="section-10" class="title-slide slide level1 center" data-auto-animate="true">
+<section id="section-11" class="title-slide slide level1 center" data-auto-animate="true">
 <h1 data-id="quarto-animate-title"></h1>
 <div class="grid grid-cols-2 grid-rows-1 place-items-center text-xl">
 <div>
@@ -2123,40 +2233,11 @@ Why use TDD?
 <div class="fragment">
 <p>🧠 Understanding the problem.</p>
 </div>
+<div class="fragment">
+<p>🛡️ Confidence that it works.</p>
 </div>
 </div>
-<aside class="notes">
-<ol type="1">
-<li>I’ve worked with a legacy app that was not only a huge codebase, but it was also slow.</li>
-</ol>
-<p>Each change took a lot of time to introduce. I had to run the whole app to see if the change I made worked as expected. I was lucky if the change was in the part of the app that was easy to reach, if it wasn’t the case, the process was time-consuming and frustrating.</p>
-<p>I had to ask myself a question: “Is there a better way to do this?”</p>
-<ol start="2" type="1">
-<li>The other time I had to implement a feature that just by talking to a business expert I wasn’t able to understand. I had to ask a lot of questions, and even then I wasn’t sure if I understood the problem correctly.</li>
-</ol>
-<ul>
-<li>Test give us entry points to the codebase, helping us move fast.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
-<section id="conclusions---wip" class="title-slide slide level1 top center" data-auto-animate="true">
-<h1 data-id="quarto-animate-title">Conclusions - WIP 🚧</h1>
-<ul>
-<li class="fragment">Tests don’t need to be a chore or an afterthought. They can be an integral part of development.</li>
-<li class="fragment">TDD it’s not about having a lot of tests. It’s about tests that help you work faster and easier with the code.</li>
-<li class="fragment">It’s about tests that tell you what the code does, not how it does it.</li>
-</ul>
+</div>
 <script src="script.js"></script>
 
 <img src="./assets/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
