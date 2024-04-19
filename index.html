@@ -740,7 +740,8 @@ Error in `my_sum(numbers)`: could not find function "my_sum"</code></pre>
 <li>In #Assert we focus on how to observe that the code works as expected.</li>
 </ol>
 <p>Again, we won’t be able to do it without understanding the problem. We should know what is the expected output for given inputs.</p>
-<p>In TDD we first define inputs and outputs, treating the not-yet-existing code as a black box.</p>
+<p>Although we could skip writing down the assertion, but only for a few iterations of prototyping, to help us undestand the data better, and design the output we want.</p>
+<p>So, in TDD we first define inputs and outputs, treating the not-yet-existing code as a black box.</p>
 <p>This approach produces tests that don’t test implementation details. It’s impossible to do so since there is no implementation yet!</p>
 <p>This makes tests focused on the behavior.</p>
 <style type="text/css">
@@ -851,7 +852,7 @@ target is NULL, current is numeric</code></pre>
 <span id="cb14-12"><a href="#cb14-12"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed 😀</code></pre>
+<pre><code>Test passed 🥳</code></pre>
 </div>
 </div>
 </div>
@@ -916,7 +917,7 @@ target is NULL, current is numeric</code></pre>
 <span id="cb17-23"><a href="#cb17-23"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed 🥇
+<pre><code>Test passed 🎊
 ── Failure: my_sum: should calculate the sum for one number ────────────────────
 `result` not equal to 1.
 1/1 mismatches
@@ -931,7 +932,7 @@ target is NULL, current is numeric</code></pre>
 </div>
 <aside class="notes">
 <ol type="1">
-<li><p>But we want it to work for more cases, not just adding 1 and 2.</p></li>
+<li><p>But we want it to work for more cases, not just adding two numbers together.</p></li>
 <li><p>We add another case, we expect it to work with a single number. This implementation doesn’t do the job. We need to change it.</p></li>
 </ol>
 <style type="text/css">
@@ -996,7 +997,7 @@ target is NULL, current is numeric</code></pre>
 <span id="cb21-23"><a href="#cb21-23"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed 🥳
+<pre><code>Test passed 😀
 Test passed 🥳</code></pre>
 </div>
 </div>
@@ -1061,8 +1062,8 @@ Test passed 🥳</code></pre>
 <span id="cb24-23"><a href="#cb24-23"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed 😀
-Test passed 😸</code></pre>
+<pre><code>Test passed 🎉
+Test passed 🎉</code></pre>
 </div>
 </div>
 </div>
@@ -1183,8 +1184,9 @@ Test passed 😸</code></pre>
 </h2>
 </div>
 <aside class="notes">
-<p>If we’re developing a Shiny module a list of user behaviors we want to implement can be more useful.</p>
-<p>If we’re developing a computation of a complex algorithm, you might want to start from the smallest piece of the algorithm and build up from there.</p>
+<p>If we’re developing a Shiny module a list of user behaviors we want to implement can be more useful. We do top-down approach.</p>
+<p>If we’re developing a computation of a complex algorithm, you might want to start from the smallest piece of the algorithm and build up from there. This would be bottom-up approach.</p>
+<p>We do what helps us move fast.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1229,14 +1231,14 @@ Test passed 😸</code></pre>
 <section id="from-requirements-to-tests" class="title-slide slide level1 text-center center" data-auto-animate="true">
 <h1 data-id="quarto-animate-title">From requirements to tests</h1>
 <div style="display:flex; justify-content:center; align-items:center; width:100%; gap:4rem;">
-<div class="muted">
+<div>
 <p>🙋‍♀️ 💬</p>
 <p>🙋‍♂️ 💬</p>
 </div>
-<div class="muted" style="display:flex; justify-items:center; align-items:center; height:100%;">
+<div style="display:flex; justify-items:center; align-items:center; height:100%;">
 <p>➡️</p>
 </div>
-<div class="muted">
+<div>
 <p>✅ Pass</p>
 <p>✅ Pass</p>
 </div>
@@ -1305,17 +1307,13 @@ Test passed 😸</code></pre>
 <span id="cb26-13" class="hljs-ln-code"><a href="#cb26-13"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
-<ol type="1">
-<li>A common way of writing down requirements are acceptance criteria. They are a list of verifiable statements.</li>
-<li>For example: something should do something.</li>
-<li>Or it should also do the other thing when something else happens. They should be:</li>
-</ol>
+<p>So how do we get these examples? 1. A common way of writing down requirements are acceptance criteria. They are a list of verifiable statements. 2. For example: something should do something. 3. Or it should also do the other thing when something else happens. They should be:</p>
 <ul>
 <li>Clear, so that everyone understands them.</li>
 <li>Concise, so that there’s no ambiguity.</li>
 </ul>
-<ol start="4" type="1">
-<li>See how easy it is to put that into a test file and to start filling in the gaps.</li>
+<ol type="1">
+<li>See how easy it is to put those descriptions into a test file, then we can start filling those test.</li>
 </ol>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1340,6 +1338,19 @@ Test passed 😸</code></pre>
 <p>💬 Abstract for high-level (acceptance) tests.</p>
 </div>
 </div>
+<aside class="notes">
+<p>Some tips of writing test cases.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 
 <section id="test-cases-1" class="title-slide slide level1 top center" data-auto-animate="true" data-transition="none">
@@ -1359,7 +1370,6 @@ Test passed 😸</code></pre>
 </div>
 </div>
 <aside class="notes">
-<p>Some tips of writing test cases.</p>
 <ol type="1">
 <li>They should be specific for low-level tests, when we have a specific input and output.</li>
 <li>We should be specific for tests of business logic and edge cases.</li>
@@ -1375,7 +1385,6 @@ Test passed 😸</code></pre>
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<!-- # 📝 Test cases {auto-animate=false data-auto-animate-restart=true data-transition=none .top} -->
 </section>
 
 <section id="test-cases-2" class="title-slide slide level1 top center" data-auto-animate="true">
@@ -1384,13 +1393,6 @@ Test passed 😸</code></pre>
 <div class="muted">
 <p>🎯 Specific for low-level (unit) tests.</p>
 </div>
-<!-- :::{.muted .line-through}
-☑️ It should work correctly.
-:::
-
-:::{.muted}
-☑️ It should throw an error when the table has 1 row.
-::: -->
 <div class="highlight">
 <p>💬 Abstract for high-level (acceptance) tests.</p>
 </div>
@@ -1488,6 +1490,34 @@ TDD x Shiny
 <li>A module can represent a feature, and by feature I mean a part or the whole problem we’re solving with the app.</li>
 <li>And that we can easily run modules as standalone Shiny apps.</li>
 </ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="section-9" class="title-slide slide level1 center" data-auto-animate="true">
+<h1 data-id="quarto-animate-title"></h1>
+<div class="grid grid-cols-5 grid-rows-1 place-items-center">
+<div class="col-span-2 justify-self-end">
+<h1>
+Example
+</h1>
+</div>
+<div class="col-span-3">
+<p><img data-src="./assets/arrow.png"></p>
+</div>
+</div>
+<aside class="notes">
+<p>Let’s see in practice how the process looks like.</p>
+<p>We’ll implement a module that shows a summary of a dataset.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -2310,7 +2340,7 @@ Backtrace:
       }</style></aside>
 </section>
 
-<section id="section-9" class="title-slide slide level1 top h-full center" data-auto-animate="true" data-transition="none">
+<section id="section-10" class="title-slide slide level1 top h-full center" data-auto-animate="true" data-transition="none">
 <h1 data-id="quarto-animate-title"></h1>
 <div class="grid grid-cols-3 grid-rows-2 gap-4 items-start my-8">
 <div class="box module" data-id="box1">
@@ -2377,7 +2407,7 @@ Backtrace:
       }</style></aside>
 </section>
 
-<section id="section-10" class="title-slide slide level1 center" data-auto-animate="true">
+<section id="section-11" class="title-slide slide level1 center" data-auto-animate="true">
 <h1 data-id="quarto-animate-title"></h1>
 <div class="grid grid-cols-2 grid-rows-1 place-items-center text-xl">
 <div>
@@ -2417,7 +2447,7 @@ Why use TDD?
       }</style></aside>
 </section>
 
-<section id="section-11" class="title-slide slide level1 text-xl center" data-auto-animate="true">
+<section id="section-12" class="title-slide slide level1 text-xl center" data-auto-animate="true">
 <h1 data-id="quarto-animate-title"></h1>
 <div class="flex flex-col items-center">
 <div class="flex items-center gap-4">
