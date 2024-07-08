@@ -619,11 +619,6 @@ Example
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<div class="cell">
-<div class="cell-output cell-output-error">
-<pre><code>Error in library(selenider): there is no package called 'selenider'</code></pre>
-</div>
-</div>
 </section>
 
 <section id="red" class="title-slide slide level1 top center" data-auto-animate="true" data-auto-animate-unmatched="false">
@@ -635,7 +630,7 @@ Example
 <div class="code-with-filename-file">
 <pre><strong>sum.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
@@ -644,11 +639,11 @@ Example
 <div class="code-with-filename-file">
 <pre><strong>test-sum.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
-<span id="cb3-3"><a href="#cb3-3"></a>    <span class="fu">fail</span>(<span class="st">"Not implemented"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4"></a>  })</span>
-<span id="cb3-5"><a href="#cb3-5"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="fu">fail</span>(<span class="st">"Not implemented"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4"></a>  })</span>
+<span id="cb2-5"><a href="#cb2-5"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>── Failure: my_sum: should calculate the sum for multiple numbers ──────────────
@@ -687,7 +682,7 @@ Not implemented</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>sum.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
@@ -696,18 +691,18 @@ Not implemented</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>test-sum.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7" data-code-line-numbers="3,6,9|3-4|6-7|9-10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
-<span id="cb7-3"><a href="#cb7-3"></a>    <span class="co"># Arrange</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb7-5"><a href="#cb7-5"></a></span>
-<span id="cb7-6"><a href="#cb7-6"></a>    <span class="co"># Act</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
-<span id="cb7-8"><a href="#cb7-8"></a></span>
-<span id="cb7-9"><a href="#cb7-9"></a>    <span class="co"># Assert</span></span>
-<span id="cb7-10"><a href="#cb7-10"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">3</span>)</span>
-<span id="cb7-11"><a href="#cb7-11"></a>  })</span>
-<span id="cb7-12"><a href="#cb7-12"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6" data-code-line-numbers="3,6,9|3-4|6-7|9-10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
+<span id="cb6-3"><a href="#cb6-3"></a>    <span class="co"># Arrange</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb6-5"><a href="#cb6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="co"># Act</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a>    <span class="co"># Assert</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">3</span>)</span>
+<span id="cb6-11"><a href="#cb6-11"></a>  })</span>
+<span id="cb6-12"><a href="#cb6-12"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>── Error: my_sum: should calculate the sum for multiple numbers ────────────────
@@ -772,9 +767,9 @@ Error in `my_sum(numbers)`: could not find function "my_sum"</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>sum.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>my_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb10-2"><a href="#cb10-2"></a></span>
-<span id="cb10-3"><a href="#cb10-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>my_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
@@ -783,18 +778,18 @@ Error in `my_sum(numbers)`: could not find function "my_sum"</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>test-sum.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
-<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
-<span id="cb11-3"><a href="#cb11-3"></a>    <span class="co"># Arrange</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb11-5"><a href="#cb11-5"></a></span>
-<span id="cb11-6"><a href="#cb11-6"></a>    <span class="co"># Act</span></span>
-<span id="cb11-7"><a href="#cb11-7"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
-<span id="cb11-8"><a href="#cb11-8"></a></span>
-<span id="cb11-9"><a href="#cb11-9"></a>    <span class="co"># Assert</span></span>
-<span id="cb11-10"><a href="#cb11-10"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">3</span>)</span>
-<span id="cb11-11"><a href="#cb11-11"></a>  })</span>
-<span id="cb11-12"><a href="#cb11-12"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
+<span id="cb10-3"><a href="#cb10-3"></a>    <span class="co"># Arrange</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb10-5"><a href="#cb10-5"></a></span>
+<span id="cb10-6"><a href="#cb10-6"></a>    <span class="co"># Act</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
+<span id="cb10-8"><a href="#cb10-8"></a></span>
+<span id="cb10-9"><a href="#cb10-9"></a>    <span class="co"># Assert</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">3</span>)</span>
+<span id="cb10-11"><a href="#cb10-11"></a>  })</span>
+<span id="cb10-12"><a href="#cb10-12"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>── Failure: my_sum: should calculate the sum for multiple numbers ──────────────
@@ -833,9 +828,9 @@ target is NULL, current is numeric</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>sum.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>my_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb14-2"><a href="#cb14-2"></a>  x[<span class="dv">1</span>] <span class="sc">+</span> x[<span class="dv">2</span>]</span>
-<span id="cb14-3"><a href="#cb14-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>my_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb13-2"><a href="#cb13-2"></a>  x[<span class="dv">1</span>] <span class="sc">+</span> x[<span class="dv">2</span>]</span>
+<span id="cb13-3"><a href="#cb13-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
@@ -844,21 +839,21 @@ target is NULL, current is numeric</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>test-sum.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
-<span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
-<span id="cb15-3"><a href="#cb15-3"></a>    <span class="co"># Arrange</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb15-5"><a href="#cb15-5"></a></span>
-<span id="cb15-6"><a href="#cb15-6"></a>    <span class="co"># Act</span></span>
-<span id="cb15-7"><a href="#cb15-7"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
-<span id="cb15-8"><a href="#cb15-8"></a></span>
-<span id="cb15-9"><a href="#cb15-9"></a>    <span class="co"># Assert</span></span>
-<span id="cb15-10"><a href="#cb15-10"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">3</span>)</span>
-<span id="cb15-11"><a href="#cb15-11"></a>  })</span>
-<span id="cb15-12"><a href="#cb15-12"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
+<span id="cb14-3"><a href="#cb14-3"></a>    <span class="co"># Arrange</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb14-5"><a href="#cb14-5"></a></span>
+<span id="cb14-6"><a href="#cb14-6"></a>    <span class="co"># Act</span></span>
+<span id="cb14-7"><a href="#cb14-7"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
+<span id="cb14-8"><a href="#cb14-8"></a></span>
+<span id="cb14-9"><a href="#cb14-9"></a>    <span class="co"># Assert</span></span>
+<span id="cb14-10"><a href="#cb14-10"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">3</span>)</span>
+<span id="cb14-11"><a href="#cb14-11"></a>  })</span>
+<span id="cb14-12"><a href="#cb14-12"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed 🎉</code></pre>
+<pre><code>Test passed 😸</code></pre>
 </div>
 </div>
 </div>
@@ -887,9 +882,9 @@ target is NULL, current is numeric</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>sum.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>my_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb17-2"><a href="#cb17-2"></a>  x[<span class="dv">1</span>] <span class="sc">+</span> x[<span class="dv">2</span>]</span>
-<span id="cb17-3"><a href="#cb17-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>my_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb16-2"><a href="#cb16-2"></a>  x[<span class="dv">1</span>] <span class="sc">+</span> x[<span class="dv">2</span>]</span>
+<span id="cb16-3"><a href="#cb16-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
@@ -898,32 +893,32 @@ target is NULL, current is numeric</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>test-sum.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="1-11|13-22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
-<span id="cb18-2"><a href="#cb18-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
-<span id="cb18-3"><a href="#cb18-3"></a>    <span class="co"># Arrange</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb18-5"><a href="#cb18-5"></a></span>
-<span id="cb18-6"><a href="#cb18-6"></a>    <span class="co"># Act</span></span>
-<span id="cb18-7"><a href="#cb18-7"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
-<span id="cb18-8"><a href="#cb18-8"></a></span>
-<span id="cb18-9"><a href="#cb18-9"></a>    <span class="co"># Assert</span></span>
-<span id="cb18-10"><a href="#cb18-10"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">3</span>)</span>
-<span id="cb18-11"><a href="#cb18-11"></a>  })</span>
-<span id="cb18-12"><a href="#cb18-12"></a></span>
-<span id="cb18-13"><a href="#cb18-13"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for one number"</span>, {</span>
-<span id="cb18-14"><a href="#cb18-14"></a>    <span class="co"># Arrange</span></span>
-<span id="cb18-15"><a href="#cb18-15"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>)</span>
-<span id="cb18-16"><a href="#cb18-16"></a></span>
-<span id="cb18-17"><a href="#cb18-17"></a>    <span class="co"># Act</span></span>
-<span id="cb18-18"><a href="#cb18-18"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
-<span id="cb18-19"><a href="#cb18-19"></a></span>
-<span id="cb18-20"><a href="#cb18-20"></a>    <span class="co"># Assert</span></span>
-<span id="cb18-21"><a href="#cb18-21"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">1</span>)</span>
-<span id="cb18-22"><a href="#cb18-22"></a>  })</span>
-<span id="cb18-23"><a href="#cb18-23"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="1-11|13-22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
+<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
+<span id="cb17-3"><a href="#cb17-3"></a>    <span class="co"># Arrange</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb17-5"><a href="#cb17-5"></a></span>
+<span id="cb17-6"><a href="#cb17-6"></a>    <span class="co"># Act</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
+<span id="cb17-8"><a href="#cb17-8"></a></span>
+<span id="cb17-9"><a href="#cb17-9"></a>    <span class="co"># Assert</span></span>
+<span id="cb17-10"><a href="#cb17-10"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">3</span>)</span>
+<span id="cb17-11"><a href="#cb17-11"></a>  })</span>
+<span id="cb17-12"><a href="#cb17-12"></a></span>
+<span id="cb17-13"><a href="#cb17-13"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for one number"</span>, {</span>
+<span id="cb17-14"><a href="#cb17-14"></a>    <span class="co"># Arrange</span></span>
+<span id="cb17-15"><a href="#cb17-15"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>)</span>
+<span id="cb17-16"><a href="#cb17-16"></a></span>
+<span id="cb17-17"><a href="#cb17-17"></a>    <span class="co"># Act</span></span>
+<span id="cb17-18"><a href="#cb17-18"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
+<span id="cb17-19"><a href="#cb17-19"></a></span>
+<span id="cb17-20"><a href="#cb17-20"></a>    <span class="co"># Assert</span></span>
+<span id="cb17-21"><a href="#cb17-21"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">1</span>)</span>
+<span id="cb17-22"><a href="#cb17-22"></a>  })</span>
+<span id="cb17-23"><a href="#cb17-23"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed 🎉
+<pre><code>Test passed 😀
 ── Failure: my_sum: should calculate the sum for one number ────────────────────
 `result` not equal to 1.
 1/1 mismatches
@@ -963,13 +958,13 @@ target is NULL, current is numeric</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>sum.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>my_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb21-2"><a href="#cb21-2"></a>  sum <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a>  <span class="cf">for</span> (number <span class="cf">in</span> x) {</span>
-<span id="cb21-4"><a href="#cb21-4"></a>    sum <span class="ot">&lt;-</span> sum <span class="sc">+</span> number</span>
-<span id="cb21-5"><a href="#cb21-5"></a>  }</span>
-<span id="cb21-6"><a href="#cb21-6"></a>  sum</span>
-<span id="cb21-7"><a href="#cb21-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>my_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb20-2"><a href="#cb20-2"></a>  sum <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>  <span class="cf">for</span> (number <span class="cf">in</span> x) {</span>
+<span id="cb20-4"><a href="#cb20-4"></a>    sum <span class="ot">&lt;-</span> sum <span class="sc">+</span> number</span>
+<span id="cb20-5"><a href="#cb20-5"></a>  }</span>
+<span id="cb20-6"><a href="#cb20-6"></a>  sum</span>
+<span id="cb20-7"><a href="#cb20-7"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
@@ -978,33 +973,33 @@ target is NULL, current is numeric</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>test-sum.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
-<span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
-<span id="cb22-3"><a href="#cb22-3"></a>    <span class="co"># Arrange</span></span>
-<span id="cb22-4"><a href="#cb22-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb22-5"><a href="#cb22-5"></a></span>
-<span id="cb22-6"><a href="#cb22-6"></a>    <span class="co"># Act</span></span>
-<span id="cb22-7"><a href="#cb22-7"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
-<span id="cb22-8"><a href="#cb22-8"></a></span>
-<span id="cb22-9"><a href="#cb22-9"></a>    <span class="co"># Assert</span></span>
-<span id="cb22-10"><a href="#cb22-10"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">3</span>)</span>
-<span id="cb22-11"><a href="#cb22-11"></a>  })</span>
-<span id="cb22-12"><a href="#cb22-12"></a></span>
-<span id="cb22-13"><a href="#cb22-13"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for one number"</span>, {</span>
-<span id="cb22-14"><a href="#cb22-14"></a>    <span class="co"># Arrange</span></span>
-<span id="cb22-15"><a href="#cb22-15"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>)</span>
-<span id="cb22-16"><a href="#cb22-16"></a></span>
-<span id="cb22-17"><a href="#cb22-17"></a>    <span class="co"># Act</span></span>
-<span id="cb22-18"><a href="#cb22-18"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
-<span id="cb22-19"><a href="#cb22-19"></a></span>
-<span id="cb22-20"><a href="#cb22-20"></a>    <span class="co"># Assert</span></span>
-<span id="cb22-21"><a href="#cb22-21"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">1</span>)</span>
-<span id="cb22-22"><a href="#cb22-22"></a>  })</span>
-<span id="cb22-23"><a href="#cb22-23"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
+<span id="cb21-3"><a href="#cb21-3"></a>    <span class="co"># Arrange</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb21-5"><a href="#cb21-5"></a></span>
+<span id="cb21-6"><a href="#cb21-6"></a>    <span class="co"># Act</span></span>
+<span id="cb21-7"><a href="#cb21-7"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
+<span id="cb21-8"><a href="#cb21-8"></a></span>
+<span id="cb21-9"><a href="#cb21-9"></a>    <span class="co"># Assert</span></span>
+<span id="cb21-10"><a href="#cb21-10"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">3</span>)</span>
+<span id="cb21-11"><a href="#cb21-11"></a>  })</span>
+<span id="cb21-12"><a href="#cb21-12"></a></span>
+<span id="cb21-13"><a href="#cb21-13"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for one number"</span>, {</span>
+<span id="cb21-14"><a href="#cb21-14"></a>    <span class="co"># Arrange</span></span>
+<span id="cb21-15"><a href="#cb21-15"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>)</span>
+<span id="cb21-16"><a href="#cb21-16"></a></span>
+<span id="cb21-17"><a href="#cb21-17"></a>    <span class="co"># Act</span></span>
+<span id="cb21-18"><a href="#cb21-18"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
+<span id="cb21-19"><a href="#cb21-19"></a></span>
+<span id="cb21-20"><a href="#cb21-20"></a>    <span class="co"># Assert</span></span>
+<span id="cb21-21"><a href="#cb21-21"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">1</span>)</span>
+<span id="cb21-22"><a href="#cb21-22"></a>  })</span>
+<span id="cb21-23"><a href="#cb21-23"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed 🥇
-Test passed 🥇</code></pre>
+<pre><code>Test passed 🌈
+Test passed 😸</code></pre>
 </div>
 </div>
 </div><aside class="notes">
@@ -1032,9 +1027,9 @@ Test passed 🥇</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>sum.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>my_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb24-2"><a href="#cb24-2"></a>  base<span class="sc">::</span><span class="fu">sum</span>(x)</span>
-<span id="cb24-3"><a href="#cb24-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>my_sum <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb23-2"><a href="#cb23-2"></a>  base<span class="sc">::</span><span class="fu">sum</span>(x)</span>
+<span id="cb23-3"><a href="#cb23-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
@@ -1043,33 +1038,33 @@ Test passed 🥇</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>test-sum.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
-<span id="cb25-2"><a href="#cb25-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
-<span id="cb25-3"><a href="#cb25-3"></a>    <span class="co"># Arrange</span></span>
-<span id="cb25-4"><a href="#cb25-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb25-5"><a href="#cb25-5"></a></span>
-<span id="cb25-6"><a href="#cb25-6"></a>    <span class="co"># Act</span></span>
-<span id="cb25-7"><a href="#cb25-7"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
-<span id="cb25-8"><a href="#cb25-8"></a></span>
-<span id="cb25-9"><a href="#cb25-9"></a>    <span class="co"># Assert</span></span>
-<span id="cb25-10"><a href="#cb25-10"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">3</span>)</span>
-<span id="cb25-11"><a href="#cb25-11"></a>  })</span>
-<span id="cb25-12"><a href="#cb25-12"></a></span>
-<span id="cb25-13"><a href="#cb25-13"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for one number"</span>, {</span>
-<span id="cb25-14"><a href="#cb25-14"></a>    <span class="co"># Arrange</span></span>
-<span id="cb25-15"><a href="#cb25-15"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>)</span>
-<span id="cb25-16"><a href="#cb25-16"></a></span>
-<span id="cb25-17"><a href="#cb25-17"></a>    <span class="co"># Act</span></span>
-<span id="cb25-18"><a href="#cb25-18"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
-<span id="cb25-19"><a href="#cb25-19"></a></span>
-<span id="cb25-20"><a href="#cb25-20"></a>    <span class="co"># Assert</span></span>
-<span id="cb25-21"><a href="#cb25-21"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">1</span>)</span>
-<span id="cb25-22"><a href="#cb25-22"></a>  })</span>
-<span id="cb25-23"><a href="#cb25-23"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">describe</span>(<span class="st">"my_sum"</span>, {</span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for multiple numbers"</span>, {</span>
+<span id="cb24-3"><a href="#cb24-3"></a>    <span class="co"># Arrange</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb24-5"><a href="#cb24-5"></a></span>
+<span id="cb24-6"><a href="#cb24-6"></a>    <span class="co"># Act</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
+<span id="cb24-8"><a href="#cb24-8"></a></span>
+<span id="cb24-9"><a href="#cb24-9"></a>    <span class="co"># Assert</span></span>
+<span id="cb24-10"><a href="#cb24-10"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">3</span>)</span>
+<span id="cb24-11"><a href="#cb24-11"></a>  })</span>
+<span id="cb24-12"><a href="#cb24-12"></a></span>
+<span id="cb24-13"><a href="#cb24-13"></a>  <span class="fu">it</span>(<span class="st">"should calculate the sum for one number"</span>, {</span>
+<span id="cb24-14"><a href="#cb24-14"></a>    <span class="co"># Arrange</span></span>
+<span id="cb24-15"><a href="#cb24-15"></a>    numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>)</span>
+<span id="cb24-16"><a href="#cb24-16"></a></span>
+<span id="cb24-17"><a href="#cb24-17"></a>    <span class="co"># Act</span></span>
+<span id="cb24-18"><a href="#cb24-18"></a>    result <span class="ot">&lt;-</span> <span class="fu">my_sum</span>(numbers)</span>
+<span id="cb24-19"><a href="#cb24-19"></a></span>
+<span id="cb24-20"><a href="#cb24-20"></a>    <span class="co"># Assert</span></span>
+<span id="cb24-21"><a href="#cb24-21"></a>    <span class="fu">expect_equal</span>(result, <span class="dv">1</span>)</span>
+<span id="cb24-22"><a href="#cb24-22"></a>  })</span>
+<span id="cb24-23"><a href="#cb24-23"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed 🎊
-Test passed 🌈</code></pre>
+<pre><code>Test passed 🥇
+Test passed 😸</code></pre>
 </div>
 </div>
 </div>
@@ -1298,19 +1293,19 @@ Test passed 🌈</code></pre>
 </ul>
 </div>
 <div class="fragment">
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb27-1" class="hljs-ln-code"><a href="#cb27-1"></a><span class="fu">describe</span>(<span class="st">"something"</span>, {</span>
-<span id="cb27-2" class="hljs-ln-code"><a href="#cb27-2"></a>  <span class="fu">it</span>(<span class="st">"should do something"</span>, {</span>
-<span id="cb27-3" class="hljs-ln-code"><a href="#cb27-3"></a>    <span class="co"># Arrange</span></span>
-<span id="cb27-4" class="hljs-ln-code"><a href="#cb27-4"></a></span>
-<span id="cb27-5" class="hljs-ln-code"><a href="#cb27-5"></a>    <span class="co"># Act</span></span>
-<span id="cb27-6" class="hljs-ln-code"><a href="#cb27-6"></a></span>
-<span id="cb27-7" class="hljs-ln-code"><a href="#cb27-7"></a>    <span class="co"># Assert</span></span>
-<span id="cb27-8" class="hljs-ln-code"><a href="#cb27-8"></a>  })</span>
-<span id="cb27-9" class="hljs-ln-code"><a href="#cb27-9"></a></span>
-<span id="cb27-10" class="hljs-ln-code"><a href="#cb27-10"></a>  <span class="fu">it</span>(<span class="st">"should do the other thing"</span>, {</span>
-<span id="cb27-11" class="hljs-ln-code"><a href="#cb27-11"></a></span>
-<span id="cb27-12" class="hljs-ln-code"><a href="#cb27-12"></a>  })</span>
-<span id="cb27-13" class="hljs-ln-code"><a href="#cb27-13"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb26-1" class="hljs-ln-code"><a href="#cb26-1"></a><span class="fu">describe</span>(<span class="st">"something"</span>, {</span>
+<span id="cb26-2" class="hljs-ln-code"><a href="#cb26-2"></a>  <span class="fu">it</span>(<span class="st">"should do something"</span>, {</span>
+<span id="cb26-3" class="hljs-ln-code"><a href="#cb26-3"></a>    <span class="co"># Arrange</span></span>
+<span id="cb26-4" class="hljs-ln-code"><a href="#cb26-4"></a></span>
+<span id="cb26-5" class="hljs-ln-code"><a href="#cb26-5"></a>    <span class="co"># Act</span></span>
+<span id="cb26-6" class="hljs-ln-code"><a href="#cb26-6"></a></span>
+<span id="cb26-7" class="hljs-ln-code"><a href="#cb26-7"></a>    <span class="co"># Assert</span></span>
+<span id="cb26-8" class="hljs-ln-code"><a href="#cb26-8"></a>  })</span>
+<span id="cb26-9" class="hljs-ln-code"><a href="#cb26-9"></a></span>
+<span id="cb26-10" class="hljs-ln-code"><a href="#cb26-10"></a>  <span class="fu">it</span>(<span class="st">"should do the other thing"</span>, {</span>
+<span id="cb26-11" class="hljs-ln-code"><a href="#cb26-11"></a></span>
+<span id="cb26-12" class="hljs-ln-code"><a href="#cb26-12"></a>  })</span>
+<span id="cb26-13" class="hljs-ln-code"><a href="#cb26-13"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <p>So how do we get these examples? 1. A common way of writing down requirements are acceptance criteria. They are a list of verifiable statements. 2. For example: something should do something. 3. Or it should also do the other thing when something else happens. They should be:</p>
@@ -1546,7 +1541,7 @@ Example
 <div class="code-with-filename-file">
 <pre><strong>dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1555,11 +1550,11 @@ Example
 <div class="code-with-filename-file">
 <pre><strong>test-dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
-<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
-<span id="cb29-3"><a href="#cb29-3"></a>    <span class="fu">fail</span>(<span class="st">"Not implemented"</span>)</span>
-<span id="cb29-4"><a href="#cb29-4"></a>  })</span>
-<span id="cb29-5"><a href="#cb29-5"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
+<span id="cb28-2"><a href="#cb28-2"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
+<span id="cb28-3"><a href="#cb28-3"></a>    <span class="fu">fail</span>(<span class="st">"Not implemented"</span>)</span>
+<span id="cb28-4"><a href="#cb28-4"></a>  })</span>
+<span id="cb28-5"><a href="#cb28-5"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>── Failure: dataset summary: should show the summary ───────────────────────────
@@ -1596,7 +1591,7 @@ Not implemented</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1605,22 +1600,22 @@ Not implemented</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>test-dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb33" data-code-line-numbers="3-7|8|10|12-13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
-<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
-<span id="cb33-3"><a href="#cb33-3"></a>    <span class="co"># Arrange</span></span>
-<span id="cb33-4"><a href="#cb33-4"></a>    app <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(</span>
-<span id="cb33-5"><a href="#cb33-5"></a>      <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
-<span id="cb33-6"><a href="#cb33-6"></a>      <span class="at">server =</span> \(input, output) <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>)</span>
-<span id="cb33-7"><a href="#cb33-7"></a>    )</span>
-<span id="cb33-8"><a href="#cb33-8"></a>    page <span class="ot">&lt;-</span> DatasetSummary<span class="sc">$</span><span class="fu">new</span>(app)</span>
-<span id="cb33-9"><a href="#cb33-9"></a></span>
-<span id="cb33-10"><a href="#cb33-10"></a>    <span class="co"># Act</span></span>
-<span id="cb33-11"><a href="#cb33-11"></a></span>
-<span id="cb33-12"><a href="#cb33-12"></a>    <span class="co"># Assert</span></span>
-<span id="cb33-13"><a href="#cb33-13"></a>    page<span class="sc">$</span><span class="fu">expect_summary_visible</span>()</span>
-<span id="cb33-14"><a href="#cb33-14"></a>    <span class="fu">fail</span>(<span class="st">"Not implemented"</span>)</span>
-<span id="cb33-15"><a href="#cb33-15"></a>  })</span>
-<span id="cb33-16"><a href="#cb33-16"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32" data-code-line-numbers="3-7|8|10|12-13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
+<span id="cb32-3"><a href="#cb32-3"></a>    <span class="co"># Arrange</span></span>
+<span id="cb32-4"><a href="#cb32-4"></a>    app <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(</span>
+<span id="cb32-5"><a href="#cb32-5"></a>      <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
+<span id="cb32-6"><a href="#cb32-6"></a>      <span class="at">server =</span> \(input, output) <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>)</span>
+<span id="cb32-7"><a href="#cb32-7"></a>    )</span>
+<span id="cb32-8"><a href="#cb32-8"></a>    page <span class="ot">&lt;-</span> DatasetSummary<span class="sc">$</span><span class="fu">new</span>(app)</span>
+<span id="cb32-9"><a href="#cb32-9"></a></span>
+<span id="cb32-10"><a href="#cb32-10"></a>    <span class="co"># Act</span></span>
+<span id="cb32-11"><a href="#cb32-11"></a></span>
+<span id="cb32-12"><a href="#cb32-12"></a>    <span class="co"># Assert</span></span>
+<span id="cb32-13"><a href="#cb32-13"></a>    page<span class="sc">$</span><span class="fu">expect_summary_visible</span>()</span>
+<span id="cb32-14"><a href="#cb32-14"></a>    <span class="fu">fail</span>(<span class="st">"Not implemented"</span>)</span>
+<span id="cb32-15"><a href="#cb32-15"></a>  })</span>
+<span id="cb32-16"><a href="#cb32-16"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>── Error: dataset summary: should show the summary ─────────────────────────────
@@ -1667,15 +1662,15 @@ Backtrace:
 <div class="code-with-filename-file">
 <pre><strong>dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>dataset_summary_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">fluidPage</span>()</span>
-<span id="cb36-3"><a href="#cb36-3"></a>}</span>
-<span id="cb36-4"><a href="#cb36-4"></a></span>
-<span id="cb36-5"><a href="#cb36-5"></a>dataset_summary_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb36-6"><a href="#cb36-6"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb36-7"><a href="#cb36-7"></a></span>
-<span id="cb36-8"><a href="#cb36-8"></a>  })</span>
-<span id="cb36-9"><a href="#cb36-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>dataset_summary_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">fluidPage</span>()</span>
+<span id="cb35-3"><a href="#cb35-3"></a>}</span>
+<span id="cb35-4"><a href="#cb35-4"></a></span>
+<span id="cb35-5"><a href="#cb35-5"></a>dataset_summary_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb35-6"><a href="#cb35-6"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb35-7"><a href="#cb35-7"></a></span>
+<span id="cb35-8"><a href="#cb35-8"></a>  })</span>
+<span id="cb35-9"><a href="#cb35-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1684,22 +1679,22 @@ Backtrace:
 <div class="code-with-filename-file">
 <pre><strong>test-dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
-<span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
-<span id="cb37-3"><a href="#cb37-3"></a>    <span class="co"># Arrange</span></span>
-<span id="cb37-4"><a href="#cb37-4"></a>    app <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(</span>
-<span id="cb37-5"><a href="#cb37-5"></a>      <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
-<span id="cb37-6"><a href="#cb37-6"></a>      <span class="at">server =</span> <span class="cf">function</span>(input, output) <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>)</span>
-<span id="cb37-7"><a href="#cb37-7"></a>    )</span>
-<span id="cb37-8"><a href="#cb37-8"></a>    page <span class="ot">&lt;-</span> DatasetSummary<span class="sc">$</span><span class="fu">new</span>(app)</span>
-<span id="cb37-9"><a href="#cb37-9"></a></span>
-<span id="cb37-10"><a href="#cb37-10"></a>    <span class="co"># Act</span></span>
-<span id="cb37-11"><a href="#cb37-11"></a></span>
-<span id="cb37-12"><a href="#cb37-12"></a>    <span class="co"># Assert</span></span>
-<span id="cb37-13"><a href="#cb37-13"></a>    page<span class="sc">$</span><span class="fu">expect_summary_visible</span>()</span>
-<span id="cb37-14"><a href="#cb37-14"></a>    <span class="fu">fail</span>(<span class="st">"Not implemented"</span>)</span>
-<span id="cb37-15"><a href="#cb37-15"></a>  })</span>
-<span id="cb37-16"><a href="#cb37-16"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
+<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
+<span id="cb36-3"><a href="#cb36-3"></a>    <span class="co"># Arrange</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a>    app <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(</span>
+<span id="cb36-5"><a href="#cb36-5"></a>      <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
+<span id="cb36-6"><a href="#cb36-6"></a>      <span class="at">server =</span> <span class="cf">function</span>(input, output) <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>)</span>
+<span id="cb36-7"><a href="#cb36-7"></a>    )</span>
+<span id="cb36-8"><a href="#cb36-8"></a>    page <span class="ot">&lt;-</span> DatasetSummary<span class="sc">$</span><span class="fu">new</span>(app)</span>
+<span id="cb36-9"><a href="#cb36-9"></a></span>
+<span id="cb36-10"><a href="#cb36-10"></a>    <span class="co"># Act</span></span>
+<span id="cb36-11"><a href="#cb36-11"></a></span>
+<span id="cb36-12"><a href="#cb36-12"></a>    <span class="co"># Assert</span></span>
+<span id="cb36-13"><a href="#cb36-13"></a>    page<span class="sc">$</span><span class="fu">expect_summary_visible</span>()</span>
+<span id="cb36-14"><a href="#cb36-14"></a>    <span class="fu">fail</span>(<span class="st">"Not implemented"</span>)</span>
+<span id="cb36-15"><a href="#cb36-15"></a>  })</span>
+<span id="cb36-16"><a href="#cb36-16"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>── Error: dataset summary: should show the summary ─────────────────────────────
@@ -1736,15 +1731,15 @@ Error in `eval(code, test_env)`: object 'DatasetSummary' not found</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>dataset_summary_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb40-2"><a href="#cb40-2"></a>  <span class="fu">fluidPage</span>()</span>
-<span id="cb40-3"><a href="#cb40-3"></a>}</span>
-<span id="cb40-4"><a href="#cb40-4"></a></span>
-<span id="cb40-5"><a href="#cb40-5"></a>dataset_summary_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb40-6"><a href="#cb40-6"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb40-7"><a href="#cb40-7"></a></span>
-<span id="cb40-8"><a href="#cb40-8"></a>  })</span>
-<span id="cb40-9"><a href="#cb40-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>dataset_summary_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">fluidPage</span>()</span>
+<span id="cb39-3"><a href="#cb39-3"></a>}</span>
+<span id="cb39-4"><a href="#cb39-4"></a></span>
+<span id="cb39-5"><a href="#cb39-5"></a>dataset_summary_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb39-6"><a href="#cb39-6"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb39-7"><a href="#cb39-7"></a></span>
+<span id="cb39-8"><a href="#cb39-8"></a>  })</span>
+<span id="cb39-9"><a href="#cb39-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1753,35 +1748,35 @@ Error in `eval(code, test_env)`: object 'DatasetSummary' not found</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>test-dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41" data-code-line-numbers="1-12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>DatasetSummary <span class="ot">&lt;-</span> R6<span class="sc">::</span><span class="fu">R6Class</span>(</span>
-<span id="cb41-2"><a href="#cb41-2"></a>  <span class="at">classname =</span> <span class="st">"DatasetSummary"</span>,</span>
-<span id="cb41-3"><a href="#cb41-3"></a>  <span class="at">public =</span> <span class="fu">list</span>(</span>
-<span id="cb41-4"><a href="#cb41-4"></a>    <span class="at">driver =</span> <span class="cn">NULL</span>,</span>
-<span id="cb41-5"><a href="#cb41-5"></a>    <span class="at">initialize =</span> <span class="cf">function</span>(app) {</span>
-<span id="cb41-6"><a href="#cb41-6"></a>      self<span class="sc">$</span>driver <span class="ot">&lt;-</span> AppDriver<span class="sc">$</span><span class="fu">new</span>(app)</span>
-<span id="cb41-7"><a href="#cb41-7"></a>    },</span>
-<span id="cb41-8"><a href="#cb41-8"></a>    <span class="at">expect_summary_visible =</span> <span class="cf">function</span>() {</span>
-<span id="cb41-9"><a href="#cb41-9"></a></span>
-<span id="cb41-10"><a href="#cb41-10"></a>    }</span>
-<span id="cb41-11"><a href="#cb41-11"></a>  )</span>
-<span id="cb41-12"><a href="#cb41-12"></a>)</span>
-<span id="cb41-13"><a href="#cb41-13"></a></span>
-<span id="cb41-14"><a href="#cb41-14"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
-<span id="cb41-15"><a href="#cb41-15"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
-<span id="cb41-16"><a href="#cb41-16"></a>    <span class="co"># Arrange</span></span>
-<span id="cb41-17"><a href="#cb41-17"></a>    app <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(</span>
-<span id="cb41-18"><a href="#cb41-18"></a>      <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
-<span id="cb41-19"><a href="#cb41-19"></a>      <span class="at">server =</span> <span class="cf">function</span>(input, output) <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>)</span>
-<span id="cb41-20"><a href="#cb41-20"></a>    )</span>
-<span id="cb41-21"><a href="#cb41-21"></a>    page <span class="ot">&lt;-</span> DatasetSummary<span class="sc">$</span><span class="fu">new</span>(app)</span>
-<span id="cb41-22"><a href="#cb41-22"></a></span>
-<span id="cb41-23"><a href="#cb41-23"></a>    <span class="co"># Act</span></span>
-<span id="cb41-24"><a href="#cb41-24"></a></span>
-<span id="cb41-25"><a href="#cb41-25"></a>    <span class="co"># Assert</span></span>
-<span id="cb41-26"><a href="#cb41-26"></a>    page<span class="sc">$</span><span class="fu">expect_summary_visible</span>()</span>
-<span id="cb41-27"><a href="#cb41-27"></a>    <span class="fu">fail</span>(<span class="st">"Not implemented"</span>)</span>
-<span id="cb41-28"><a href="#cb41-28"></a>  })</span>
-<span id="cb41-29"><a href="#cb41-29"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40" data-code-line-numbers="1-12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>DatasetSummary <span class="ot">&lt;-</span> R6<span class="sc">::</span><span class="fu">R6Class</span>(</span>
+<span id="cb40-2"><a href="#cb40-2"></a>  <span class="at">classname =</span> <span class="st">"DatasetSummary"</span>,</span>
+<span id="cb40-3"><a href="#cb40-3"></a>  <span class="at">public =</span> <span class="fu">list</span>(</span>
+<span id="cb40-4"><a href="#cb40-4"></a>    <span class="at">driver =</span> <span class="cn">NULL</span>,</span>
+<span id="cb40-5"><a href="#cb40-5"></a>    <span class="at">initialize =</span> <span class="cf">function</span>(app) {</span>
+<span id="cb40-6"><a href="#cb40-6"></a>      self<span class="sc">$</span>driver <span class="ot">&lt;-</span> AppDriver<span class="sc">$</span><span class="fu">new</span>(app)</span>
+<span id="cb40-7"><a href="#cb40-7"></a>    },</span>
+<span id="cb40-8"><a href="#cb40-8"></a>    <span class="at">expect_summary_visible =</span> <span class="cf">function</span>() {</span>
+<span id="cb40-9"><a href="#cb40-9"></a></span>
+<span id="cb40-10"><a href="#cb40-10"></a>    }</span>
+<span id="cb40-11"><a href="#cb40-11"></a>  )</span>
+<span id="cb40-12"><a href="#cb40-12"></a>)</span>
+<span id="cb40-13"><a href="#cb40-13"></a></span>
+<span id="cb40-14"><a href="#cb40-14"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
+<span id="cb40-15"><a href="#cb40-15"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
+<span id="cb40-16"><a href="#cb40-16"></a>    <span class="co"># Arrange</span></span>
+<span id="cb40-17"><a href="#cb40-17"></a>    app <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(</span>
+<span id="cb40-18"><a href="#cb40-18"></a>      <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
+<span id="cb40-19"><a href="#cb40-19"></a>      <span class="at">server =</span> <span class="cf">function</span>(input, output) <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>)</span>
+<span id="cb40-20"><a href="#cb40-20"></a>    )</span>
+<span id="cb40-21"><a href="#cb40-21"></a>    page <span class="ot">&lt;-</span> DatasetSummary<span class="sc">$</span><span class="fu">new</span>(app)</span>
+<span id="cb40-22"><a href="#cb40-22"></a></span>
+<span id="cb40-23"><a href="#cb40-23"></a>    <span class="co"># Act</span></span>
+<span id="cb40-24"><a href="#cb40-24"></a></span>
+<span id="cb40-25"><a href="#cb40-25"></a>    <span class="co"># Assert</span></span>
+<span id="cb40-26"><a href="#cb40-26"></a>    page<span class="sc">$</span><span class="fu">expect_summary_visible</span>()</span>
+<span id="cb40-27"><a href="#cb40-27"></a>    <span class="fu">fail</span>(<span class="st">"Not implemented"</span>)</span>
+<span id="cb40-28"><a href="#cb40-28"></a>  })</span>
+<span id="cb40-29"><a href="#cb40-29"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>── Failure: dataset summary: should show the summary ───────────────────────────
@@ -1818,15 +1813,15 @@ Not implemented</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>dataset_summary_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb44-2"><a href="#cb44-2"></a>  <span class="fu">fluidPage</span>()</span>
-<span id="cb44-3"><a href="#cb44-3"></a>}</span>
-<span id="cb44-4"><a href="#cb44-4"></a></span>
-<span id="cb44-5"><a href="#cb44-5"></a>dataset_summary_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb44-6"><a href="#cb44-6"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb44-7"><a href="#cb44-7"></a></span>
-<span id="cb44-8"><a href="#cb44-8"></a>  })</span>
-<span id="cb44-9"><a href="#cb44-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>dataset_summary_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">fluidPage</span>()</span>
+<span id="cb43-3"><a href="#cb43-3"></a>}</span>
+<span id="cb43-4"><a href="#cb43-4"></a></span>
+<span id="cb43-5"><a href="#cb43-5"></a>dataset_summary_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb43-6"><a href="#cb43-6"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb43-7"><a href="#cb43-7"></a></span>
+<span id="cb43-8"><a href="#cb43-8"></a>  })</span>
+<span id="cb43-9"><a href="#cb43-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1835,40 +1830,40 @@ Not implemented</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>test-dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45" data-code-line-numbers="17-25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>DatasetSummary <span class="ot">&lt;-</span> R6<span class="sc">::</span><span class="fu">R6Class</span>(</span>
-<span id="cb45-2"><a href="#cb45-2"></a>  <span class="at">classname =</span> <span class="st">"DatasetSummary"</span>,</span>
-<span id="cb45-3"><a href="#cb45-3"></a>  <span class="at">public =</span> <span class="fu">list</span>(</span>
-<span id="cb45-4"><a href="#cb45-4"></a>    <span class="at">driver =</span> <span class="cn">NULL</span>,</span>
-<span id="cb45-5"><a href="#cb45-5"></a>    <span class="at">initialize =</span> <span class="cf">function</span>(app) {</span>
-<span id="cb45-6"><a href="#cb45-6"></a>      self<span class="sc">$</span>driver <span class="ot">&lt;-</span> AppDriver<span class="sc">$</span><span class="fu">new</span>(app)</span>
-<span id="cb45-7"><a href="#cb45-7"></a>    },</span>
-<span id="cb45-8"><a href="#cb45-8"></a>    <span class="at">expect_summary_visible =</span> <span class="cf">function</span>() {</span>
-<span id="cb45-9"><a href="#cb45-9"></a></span>
-<span id="cb45-10"><a href="#cb45-10"></a>    }</span>
-<span id="cb45-11"><a href="#cb45-11"></a>  )</span>
-<span id="cb45-12"><a href="#cb45-12"></a>)</span>
-<span id="cb45-13"><a href="#cb45-13"></a></span>
-<span id="cb45-14"><a href="#cb45-14"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
-<span id="cb45-15"><a href="#cb45-15"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
-<span id="cb45-16"><a href="#cb45-16"></a>    <span class="co"># Arrange</span></span>
-<span id="cb45-17"><a href="#cb45-17"></a>    app <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(</span>
-<span id="cb45-18"><a href="#cb45-18"></a>      <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
-<span id="cb45-19"><a href="#cb45-19"></a>      <span class="at">server =</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb45-20"><a href="#cb45-20"></a>        data_provider <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">get_summary =</span> \() {</span>
-<span id="cb45-21"><a href="#cb45-21"></a>          iris</span>
-<span id="cb45-22"><a href="#cb45-22"></a>        })</span>
-<span id="cb45-23"><a href="#cb45-23"></a>        <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>, data_provider)</span>
-<span id="cb45-24"><a href="#cb45-24"></a>      }</span>
-<span id="cb45-25"><a href="#cb45-25"></a>    )</span>
-<span id="cb45-26"><a href="#cb45-26"></a>    page <span class="ot">&lt;-</span> DatasetSummary<span class="sc">$</span><span class="fu">new</span>(app)</span>
-<span id="cb45-27"><a href="#cb45-27"></a></span>
-<span id="cb45-28"><a href="#cb45-28"></a>    <span class="co"># Act</span></span>
-<span id="cb45-29"><a href="#cb45-29"></a></span>
-<span id="cb45-30"><a href="#cb45-30"></a>    <span class="co"># Assert</span></span>
-<span id="cb45-31"><a href="#cb45-31"></a>    page<span class="sc">$</span><span class="fu">expect_summary_visible</span>()</span>
-<span id="cb45-32"><a href="#cb45-32"></a>    <span class="fu">fail</span>(<span class="st">"Not implemented"</span>)</span>
-<span id="cb45-33"><a href="#cb45-33"></a>  })</span>
-<span id="cb45-34"><a href="#cb45-34"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44" data-code-line-numbers="17-25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>DatasetSummary <span class="ot">&lt;-</span> R6<span class="sc">::</span><span class="fu">R6Class</span>(</span>
+<span id="cb44-2"><a href="#cb44-2"></a>  <span class="at">classname =</span> <span class="st">"DatasetSummary"</span>,</span>
+<span id="cb44-3"><a href="#cb44-3"></a>  <span class="at">public =</span> <span class="fu">list</span>(</span>
+<span id="cb44-4"><a href="#cb44-4"></a>    <span class="at">driver =</span> <span class="cn">NULL</span>,</span>
+<span id="cb44-5"><a href="#cb44-5"></a>    <span class="at">initialize =</span> <span class="cf">function</span>(app) {</span>
+<span id="cb44-6"><a href="#cb44-6"></a>      self<span class="sc">$</span>driver <span class="ot">&lt;-</span> AppDriver<span class="sc">$</span><span class="fu">new</span>(app)</span>
+<span id="cb44-7"><a href="#cb44-7"></a>    },</span>
+<span id="cb44-8"><a href="#cb44-8"></a>    <span class="at">expect_summary_visible =</span> <span class="cf">function</span>() {</span>
+<span id="cb44-9"><a href="#cb44-9"></a></span>
+<span id="cb44-10"><a href="#cb44-10"></a>    }</span>
+<span id="cb44-11"><a href="#cb44-11"></a>  )</span>
+<span id="cb44-12"><a href="#cb44-12"></a>)</span>
+<span id="cb44-13"><a href="#cb44-13"></a></span>
+<span id="cb44-14"><a href="#cb44-14"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
+<span id="cb44-15"><a href="#cb44-15"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
+<span id="cb44-16"><a href="#cb44-16"></a>    <span class="co"># Arrange</span></span>
+<span id="cb44-17"><a href="#cb44-17"></a>    app <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(</span>
+<span id="cb44-18"><a href="#cb44-18"></a>      <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
+<span id="cb44-19"><a href="#cb44-19"></a>      <span class="at">server =</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb44-20"><a href="#cb44-20"></a>        data_provider <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">get_summary =</span> \() {</span>
+<span id="cb44-21"><a href="#cb44-21"></a>          iris</span>
+<span id="cb44-22"><a href="#cb44-22"></a>        })</span>
+<span id="cb44-23"><a href="#cb44-23"></a>        <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>, data_provider)</span>
+<span id="cb44-24"><a href="#cb44-24"></a>      }</span>
+<span id="cb44-25"><a href="#cb44-25"></a>    )</span>
+<span id="cb44-26"><a href="#cb44-26"></a>    page <span class="ot">&lt;-</span> DatasetSummary<span class="sc">$</span><span class="fu">new</span>(app)</span>
+<span id="cb44-27"><a href="#cb44-27"></a></span>
+<span id="cb44-28"><a href="#cb44-28"></a>    <span class="co"># Act</span></span>
+<span id="cb44-29"><a href="#cb44-29"></a></span>
+<span id="cb44-30"><a href="#cb44-30"></a>    <span class="co"># Assert</span></span>
+<span id="cb44-31"><a href="#cb44-31"></a>    page<span class="sc">$</span><span class="fu">expect_summary_visible</span>()</span>
+<span id="cb44-32"><a href="#cb44-32"></a>    <span class="fu">fail</span>(<span class="st">"Not implemented"</span>)</span>
+<span id="cb44-33"><a href="#cb44-33"></a>  })</span>
+<span id="cb44-34"><a href="#cb44-34"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>── Failure: dataset summary: should show the summary ───────────────────────────
@@ -1906,15 +1901,15 @@ Not implemented</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>dataset_summary_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb48-2"><a href="#cb48-2"></a>  <span class="fu">fluidPage</span>()</span>
-<span id="cb48-3"><a href="#cb48-3"></a>}</span>
-<span id="cb48-4"><a href="#cb48-4"></a></span>
-<span id="cb48-5"><a href="#cb48-5"></a>dataset_summary_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id, data_provider) {</span>
-<span id="cb48-6"><a href="#cb48-6"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb48-7"><a href="#cb48-7"></a></span>
-<span id="cb48-8"><a href="#cb48-8"></a>  })</span>
-<span id="cb48-9"><a href="#cb48-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>dataset_summary_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb47-2"><a href="#cb47-2"></a>  <span class="fu">fluidPage</span>()</span>
+<span id="cb47-3"><a href="#cb47-3"></a>}</span>
+<span id="cb47-4"><a href="#cb47-4"></a></span>
+<span id="cb47-5"><a href="#cb47-5"></a>dataset_summary_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id, data_provider) {</span>
+<span id="cb47-6"><a href="#cb47-6"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb47-7"><a href="#cb47-7"></a></span>
+<span id="cb47-8"><a href="#cb47-8"></a>  })</span>
+<span id="cb47-9"><a href="#cb47-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1923,40 +1918,40 @@ Not implemented</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>test-dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49" data-code-line-numbers="17-25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>DatasetSummary <span class="ot">&lt;-</span> R6<span class="sc">::</span><span class="fu">R6Class</span>(</span>
-<span id="cb49-2"><a href="#cb49-2"></a>  <span class="at">classname =</span> <span class="st">"DatasetSummary"</span>,</span>
-<span id="cb49-3"><a href="#cb49-3"></a>  <span class="at">public =</span> <span class="fu">list</span>(</span>
-<span id="cb49-4"><a href="#cb49-4"></a>    <span class="at">driver =</span> <span class="cn">NULL</span>,</span>
-<span id="cb49-5"><a href="#cb49-5"></a>    <span class="at">initialize =</span> <span class="cf">function</span>(app) {</span>
-<span id="cb49-6"><a href="#cb49-6"></a>      self<span class="sc">$</span>driver <span class="ot">&lt;-</span> AppDriver<span class="sc">$</span><span class="fu">new</span>(app)</span>
-<span id="cb49-7"><a href="#cb49-7"></a>    },</span>
-<span id="cb49-8"><a href="#cb49-8"></a>    <span class="at">expect_summary_visible =</span> <span class="cf">function</span>() {</span>
-<span id="cb49-9"><a href="#cb49-9"></a></span>
-<span id="cb49-10"><a href="#cb49-10"></a>    }</span>
-<span id="cb49-11"><a href="#cb49-11"></a>  )</span>
-<span id="cb49-12"><a href="#cb49-12"></a>)</span>
-<span id="cb49-13"><a href="#cb49-13"></a></span>
-<span id="cb49-14"><a href="#cb49-14"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
-<span id="cb49-15"><a href="#cb49-15"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
-<span id="cb49-16"><a href="#cb49-16"></a>    <span class="co"># Arrange</span></span>
-<span id="cb49-17"><a href="#cb49-17"></a>    app <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(</span>
-<span id="cb49-18"><a href="#cb49-18"></a>      <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
-<span id="cb49-19"><a href="#cb49-19"></a>      <span class="at">server =</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb49-20"><a href="#cb49-20"></a>        data_provider <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">get_summary =</span> \() {</span>
-<span id="cb49-21"><a href="#cb49-21"></a>          iris</span>
-<span id="cb49-22"><a href="#cb49-22"></a>        })</span>
-<span id="cb49-23"><a href="#cb49-23"></a>        <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>, data_provider)</span>
-<span id="cb49-24"><a href="#cb49-24"></a>      }</span>
-<span id="cb49-25"><a href="#cb49-25"></a>    )</span>
-<span id="cb49-26"><a href="#cb49-26"></a>    page <span class="ot">&lt;-</span> DatasetSummary<span class="sc">$</span><span class="fu">new</span>(app)</span>
-<span id="cb49-27"><a href="#cb49-27"></a></span>
-<span id="cb49-28"><a href="#cb49-28"></a>    <span class="co"># Act</span></span>
-<span id="cb49-29"><a href="#cb49-29"></a></span>
-<span id="cb49-30"><a href="#cb49-30"></a>    <span class="co"># Assert</span></span>
-<span id="cb49-31"><a href="#cb49-31"></a>    page<span class="sc">$</span><span class="fu">expect_summary_visible</span>()</span>
-<span id="cb49-32"><a href="#cb49-32"></a>    <span class="fu">fail</span>(<span class="st">"Not implemented"</span>)</span>
-<span id="cb49-33"><a href="#cb49-33"></a>  })</span>
-<span id="cb49-34"><a href="#cb49-34"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48" data-code-line-numbers="17-25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>DatasetSummary <span class="ot">&lt;-</span> R6<span class="sc">::</span><span class="fu">R6Class</span>(</span>
+<span id="cb48-2"><a href="#cb48-2"></a>  <span class="at">classname =</span> <span class="st">"DatasetSummary"</span>,</span>
+<span id="cb48-3"><a href="#cb48-3"></a>  <span class="at">public =</span> <span class="fu">list</span>(</span>
+<span id="cb48-4"><a href="#cb48-4"></a>    <span class="at">driver =</span> <span class="cn">NULL</span>,</span>
+<span id="cb48-5"><a href="#cb48-5"></a>    <span class="at">initialize =</span> <span class="cf">function</span>(app) {</span>
+<span id="cb48-6"><a href="#cb48-6"></a>      self<span class="sc">$</span>driver <span class="ot">&lt;-</span> AppDriver<span class="sc">$</span><span class="fu">new</span>(app)</span>
+<span id="cb48-7"><a href="#cb48-7"></a>    },</span>
+<span id="cb48-8"><a href="#cb48-8"></a>    <span class="at">expect_summary_visible =</span> <span class="cf">function</span>() {</span>
+<span id="cb48-9"><a href="#cb48-9"></a></span>
+<span id="cb48-10"><a href="#cb48-10"></a>    }</span>
+<span id="cb48-11"><a href="#cb48-11"></a>  )</span>
+<span id="cb48-12"><a href="#cb48-12"></a>)</span>
+<span id="cb48-13"><a href="#cb48-13"></a></span>
+<span id="cb48-14"><a href="#cb48-14"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
+<span id="cb48-15"><a href="#cb48-15"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
+<span id="cb48-16"><a href="#cb48-16"></a>    <span class="co"># Arrange</span></span>
+<span id="cb48-17"><a href="#cb48-17"></a>    app <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(</span>
+<span id="cb48-18"><a href="#cb48-18"></a>      <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
+<span id="cb48-19"><a href="#cb48-19"></a>      <span class="at">server =</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb48-20"><a href="#cb48-20"></a>        data_provider <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">get_summary =</span> \() {</span>
+<span id="cb48-21"><a href="#cb48-21"></a>          iris</span>
+<span id="cb48-22"><a href="#cb48-22"></a>        })</span>
+<span id="cb48-23"><a href="#cb48-23"></a>        <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>, data_provider)</span>
+<span id="cb48-24"><a href="#cb48-24"></a>      }</span>
+<span id="cb48-25"><a href="#cb48-25"></a>    )</span>
+<span id="cb48-26"><a href="#cb48-26"></a>    page <span class="ot">&lt;-</span> DatasetSummary<span class="sc">$</span><span class="fu">new</span>(app)</span>
+<span id="cb48-27"><a href="#cb48-27"></a></span>
+<span id="cb48-28"><a href="#cb48-28"></a>    <span class="co"># Act</span></span>
+<span id="cb48-29"><a href="#cb48-29"></a></span>
+<span id="cb48-30"><a href="#cb48-30"></a>    <span class="co"># Assert</span></span>
+<span id="cb48-31"><a href="#cb48-31"></a>    page<span class="sc">$</span><span class="fu">expect_summary_visible</span>()</span>
+<span id="cb48-32"><a href="#cb48-32"></a>    <span class="fu">fail</span>(<span class="st">"Not implemented"</span>)</span>
+<span id="cb48-33"><a href="#cb48-33"></a>  })</span>
+<span id="cb48-34"><a href="#cb48-34"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>── Failure: dataset summary: should show the summary ───────────────────────────
@@ -1993,15 +1988,15 @@ Not implemented</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>dataset_summary_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb52-2"><a href="#cb52-2"></a>  <span class="fu">fluidPage</span>()</span>
-<span id="cb52-3"><a href="#cb52-3"></a>}</span>
-<span id="cb52-4"><a href="#cb52-4"></a></span>
-<span id="cb52-5"><a href="#cb52-5"></a>dataset_summary_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id, data_provider) {</span>
-<span id="cb52-6"><a href="#cb52-6"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb52-7"><a href="#cb52-7"></a></span>
-<span id="cb52-8"><a href="#cb52-8"></a>  })</span>
-<span id="cb52-9"><a href="#cb52-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>dataset_summary_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb51-2"><a href="#cb51-2"></a>  <span class="fu">fluidPage</span>()</span>
+<span id="cb51-3"><a href="#cb51-3"></a>}</span>
+<span id="cb51-4"><a href="#cb51-4"></a></span>
+<span id="cb51-5"><a href="#cb51-5"></a>dataset_summary_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id, data_provider) {</span>
+<span id="cb51-6"><a href="#cb51-6"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb51-7"><a href="#cb51-7"></a></span>
+<span id="cb51-8"><a href="#cb51-8"></a>  })</span>
+<span id="cb51-9"><a href="#cb51-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="flex flex-col items-center justify-center text-lg mt-4">
@@ -2013,48 +2008,48 @@ Not implemented</code></pre>
 <div class="code-with-filename-file">
 <pre><strong>test-dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb53" data-code-line-numbers="8-11|13-17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a>DatasetSummary <span class="ot">&lt;-</span> R6<span class="sc">::</span><span class="fu">R6Class</span>(</span>
-<span id="cb53-2"><a href="#cb53-2"></a>  <span class="at">classname =</span> <span class="st">"DatasetSummary"</span>,</span>
-<span id="cb53-3"><a href="#cb53-3"></a>  <span class="at">public =</span> <span class="fu">list</span>(</span>
-<span id="cb53-4"><a href="#cb53-4"></a>    <span class="at">driver =</span> <span class="cn">NULL</span>,</span>
-<span id="cb53-5"><a href="#cb53-5"></a>    <span class="at">selenider =</span> <span class="cn">NULL</span>,</span>
-<span id="cb53-6"><a href="#cb53-6"></a>    <span class="at">initialize =</span> <span class="cf">function</span>(app) {</span>
-<span id="cb53-7"><a href="#cb53-7"></a>      self<span class="sc">$</span>driver <span class="ot">&lt;-</span> AppDriver<span class="sc">$</span><span class="fu">new</span>(app)</span>
-<span id="cb53-8"><a href="#cb53-8"></a>      self<span class="sc">$</span>selenider <span class="ot">&lt;-</span> <span class="fu">selenider_session</span>(</span>
-<span id="cb53-9"><a href="#cb53-9"></a>        <span class="at">driver =</span> self<span class="sc">$</span>driver,</span>
-<span id="cb53-10"><a href="#cb53-10"></a>        <span class="at">local =</span> <span class="cn">FALSE</span></span>
-<span id="cb53-11"><a href="#cb53-11"></a>      )</span>
-<span id="cb53-12"><a href="#cb53-12"></a>    },</span>
-<span id="cb53-13"><a href="#cb53-13"></a>    <span class="at">expect_summary_visible =</span> <span class="cf">function</span>() {</span>
-<span id="cb53-14"><a href="#cb53-14"></a>      <span class="fu">find_element</span>(self<span class="sc">$</span>selenider, <span class="at">css =</span> <span class="st">"#summary &gt; table"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb53-15"><a href="#cb53-15"></a>        <span class="fu">elem_expect</span>(is_visible) <span class="sc">|&gt;</span></span>
-<span id="cb53-16"><a href="#cb53-16"></a>        <span class="fu">elem_expect</span>(\(x) <span class="fu">has_at_least</span>(<span class="fu">elem_children</span>(x), <span class="dv">1</span>))</span>
-<span id="cb53-17"><a href="#cb53-17"></a>    }</span>
-<span id="cb53-18"><a href="#cb53-18"></a>  )</span>
-<span id="cb53-19"><a href="#cb53-19"></a>)</span>
-<span id="cb53-20"><a href="#cb53-20"></a></span>
-<span id="cb53-21"><a href="#cb53-21"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
-<span id="cb53-22"><a href="#cb53-22"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
-<span id="cb53-23"><a href="#cb53-23"></a>    <span class="co"># Arrange</span></span>
-<span id="cb53-24"><a href="#cb53-24"></a>    app <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(</span>
-<span id="cb53-25"><a href="#cb53-25"></a>      <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
-<span id="cb53-26"><a href="#cb53-26"></a>      <span class="at">server =</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb53-27"><a href="#cb53-27"></a>        data_provider <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb53-28"><a href="#cb53-28"></a>          <span class="at">get_summary =</span> <span class="cf">function</span>() {</span>
-<span id="cb53-29"><a href="#cb53-29"></a>            iris</span>
-<span id="cb53-30"><a href="#cb53-30"></a>          }</span>
-<span id="cb53-31"><a href="#cb53-31"></a>        )</span>
-<span id="cb53-32"><a href="#cb53-32"></a>        <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>, data_provider)</span>
-<span id="cb53-33"><a href="#cb53-33"></a>      }</span>
-<span id="cb53-34"><a href="#cb53-34"></a>    )</span>
-<span id="cb53-35"><a href="#cb53-35"></a>    page <span class="ot">&lt;-</span> DatasetSummary<span class="sc">$</span><span class="fu">new</span>(app)</span>
-<span id="cb53-36"><a href="#cb53-36"></a></span>
-<span id="cb53-37"><a href="#cb53-37"></a>    <span class="co"># Act</span></span>
-<span id="cb53-38"><a href="#cb53-38"></a></span>
-<span id="cb53-39"><a href="#cb53-39"></a>    <span class="co"># Assert</span></span>
-<span id="cb53-40"><a href="#cb53-40"></a>    page<span class="sc">$</span><span class="fu">expect_summary_visible</span>()</span>
-<span id="cb53-41"><a href="#cb53-41"></a>  })</span>
-<span id="cb53-42"><a href="#cb53-42"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52" data-code-line-numbers="8-11|13-17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>DatasetSummary <span class="ot">&lt;-</span> R6<span class="sc">::</span><span class="fu">R6Class</span>(</span>
+<span id="cb52-2"><a href="#cb52-2"></a>  <span class="at">classname =</span> <span class="st">"DatasetSummary"</span>,</span>
+<span id="cb52-3"><a href="#cb52-3"></a>  <span class="at">public =</span> <span class="fu">list</span>(</span>
+<span id="cb52-4"><a href="#cb52-4"></a>    <span class="at">driver =</span> <span class="cn">NULL</span>,</span>
+<span id="cb52-5"><a href="#cb52-5"></a>    <span class="at">selenider =</span> <span class="cn">NULL</span>,</span>
+<span id="cb52-6"><a href="#cb52-6"></a>    <span class="at">initialize =</span> <span class="cf">function</span>(app) {</span>
+<span id="cb52-7"><a href="#cb52-7"></a>      self<span class="sc">$</span>driver <span class="ot">&lt;-</span> AppDriver<span class="sc">$</span><span class="fu">new</span>(app)</span>
+<span id="cb52-8"><a href="#cb52-8"></a>      self<span class="sc">$</span>selenider <span class="ot">&lt;-</span> <span class="fu">selenider_session</span>(</span>
+<span id="cb52-9"><a href="#cb52-9"></a>        <span class="at">driver =</span> self<span class="sc">$</span>driver,</span>
+<span id="cb52-10"><a href="#cb52-10"></a>        <span class="at">local =</span> <span class="cn">FALSE</span></span>
+<span id="cb52-11"><a href="#cb52-11"></a>      )</span>
+<span id="cb52-12"><a href="#cb52-12"></a>    },</span>
+<span id="cb52-13"><a href="#cb52-13"></a>    <span class="at">expect_summary_visible =</span> <span class="cf">function</span>() {</span>
+<span id="cb52-14"><a href="#cb52-14"></a>      <span class="fu">find_element</span>(self<span class="sc">$</span>selenider, <span class="at">css =</span> <span class="st">"#summary &gt; table"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb52-15"><a href="#cb52-15"></a>        <span class="fu">elem_expect</span>(is_visible) <span class="sc">|&gt;</span></span>
+<span id="cb52-16"><a href="#cb52-16"></a>        <span class="fu">elem_expect</span>(\(x) <span class="fu">has_at_least</span>(<span class="fu">elem_children</span>(x), <span class="dv">1</span>))</span>
+<span id="cb52-17"><a href="#cb52-17"></a>    }</span>
+<span id="cb52-18"><a href="#cb52-18"></a>  )</span>
+<span id="cb52-19"><a href="#cb52-19"></a>)</span>
+<span id="cb52-20"><a href="#cb52-20"></a></span>
+<span id="cb52-21"><a href="#cb52-21"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
+<span id="cb52-22"><a href="#cb52-22"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
+<span id="cb52-23"><a href="#cb52-23"></a>    <span class="co"># Arrange</span></span>
+<span id="cb52-24"><a href="#cb52-24"></a>    app <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(</span>
+<span id="cb52-25"><a href="#cb52-25"></a>      <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
+<span id="cb52-26"><a href="#cb52-26"></a>      <span class="at">server =</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb52-27"><a href="#cb52-27"></a>        data_provider <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb52-28"><a href="#cb52-28"></a>          <span class="at">get_summary =</span> <span class="cf">function</span>() {</span>
+<span id="cb52-29"><a href="#cb52-29"></a>            iris</span>
+<span id="cb52-30"><a href="#cb52-30"></a>          }</span>
+<span id="cb52-31"><a href="#cb52-31"></a>        )</span>
+<span id="cb52-32"><a href="#cb52-32"></a>        <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>, data_provider)</span>
+<span id="cb52-33"><a href="#cb52-33"></a>      }</span>
+<span id="cb52-34"><a href="#cb52-34"></a>    )</span>
+<span id="cb52-35"><a href="#cb52-35"></a>    page <span class="ot">&lt;-</span> DatasetSummary<span class="sc">$</span><span class="fu">new</span>(app)</span>
+<span id="cb52-36"><a href="#cb52-36"></a></span>
+<span id="cb52-37"><a href="#cb52-37"></a>    <span class="co"># Act</span></span>
+<span id="cb52-38"><a href="#cb52-38"></a></span>
+<span id="cb52-39"><a href="#cb52-39"></a>    <span class="co"># Assert</span></span>
+<span id="cb52-40"><a href="#cb52-40"></a>    page<span class="sc">$</span><span class="fu">expect_summary_visible</span>()</span>
+<span id="cb52-41"><a href="#cb52-41"></a>  })</span>
+<span id="cb52-42"><a href="#cb52-42"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>── Failure: dataset summary: should show the summary ───────────────────────────
@@ -2139,20 +2134,20 @@ Backtrace:
 <div class="code-with-filename-file">
 <pre><strong>dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>dataset_summary_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb56-2"><a href="#cb56-2"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
-<span id="cb56-3"><a href="#cb56-3"></a>  <span class="fu">fluidPage</span>(</span>
-<span id="cb56-4"><a href="#cb56-4"></a>    <span class="fu">tableOutput</span>(<span class="fu">ns</span>(<span class="st">"summary"</span>))</span>
-<span id="cb56-5"><a href="#cb56-5"></a>  )</span>
-<span id="cb56-6"><a href="#cb56-6"></a>}</span>
-<span id="cb56-7"><a href="#cb56-7"></a></span>
-<span id="cb56-8"><a href="#cb56-8"></a>dataset_summary_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id, data_provider) {</span>
-<span id="cb56-9"><a href="#cb56-9"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb56-10"><a href="#cb56-10"></a>    output<span class="sc">$</span>summary <span class="ot">&lt;-</span> <span class="fu">renderTable</span>({</span>
-<span id="cb56-11"><a href="#cb56-11"></a>      data_provider<span class="sc">$</span><span class="fu">get_summary</span>()</span>
-<span id="cb56-12"><a href="#cb56-12"></a>    })</span>
-<span id="cb56-13"><a href="#cb56-13"></a>  })</span>
-<span id="cb56-14"><a href="#cb56-14"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>dataset_summary_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb55-2"><a href="#cb55-2"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb55-3"><a href="#cb55-3"></a>  <span class="fu">fluidPage</span>(</span>
+<span id="cb55-4"><a href="#cb55-4"></a>    <span class="fu">tableOutput</span>(<span class="fu">ns</span>(<span class="st">"summary"</span>))</span>
+<span id="cb55-5"><a href="#cb55-5"></a>  )</span>
+<span id="cb55-6"><a href="#cb55-6"></a>}</span>
+<span id="cb55-7"><a href="#cb55-7"></a></span>
+<span id="cb55-8"><a href="#cb55-8"></a>dataset_summary_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id, data_provider) {</span>
+<span id="cb55-9"><a href="#cb55-9"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb55-10"><a href="#cb55-10"></a>    output<span class="sc">$</span>summary <span class="ot">&lt;-</span> <span class="fu">renderTable</span>({</span>
+<span id="cb55-11"><a href="#cb55-11"></a>      data_provider<span class="sc">$</span><span class="fu">get_summary</span>()</span>
+<span id="cb55-12"><a href="#cb55-12"></a>    })</span>
+<span id="cb55-13"><a href="#cb55-13"></a>  })</span>
+<span id="cb55-14"><a href="#cb55-14"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -2161,48 +2156,48 @@ Backtrace:
 <div class="code-with-filename-file">
 <pre><strong>test-dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb57" data-code-line-numbers="40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a>DatasetSummary <span class="ot">&lt;-</span> R6<span class="sc">::</span><span class="fu">R6Class</span>(</span>
-<span id="cb57-2"><a href="#cb57-2"></a>  <span class="at">classname =</span> <span class="st">"DatasetSummary"</span>,</span>
-<span id="cb57-3"><a href="#cb57-3"></a>  <span class="at">public =</span> <span class="fu">list</span>(</span>
-<span id="cb57-4"><a href="#cb57-4"></a>    <span class="at">driver =</span> <span class="cn">NULL</span>,</span>
-<span id="cb57-5"><a href="#cb57-5"></a>    <span class="at">selenider =</span> <span class="cn">NULL</span>,</span>
-<span id="cb57-6"><a href="#cb57-6"></a>    <span class="at">initialize =</span> <span class="cf">function</span>(app) {</span>
-<span id="cb57-7"><a href="#cb57-7"></a>      self<span class="sc">$</span>driver <span class="ot">&lt;-</span> AppDriver<span class="sc">$</span><span class="fu">new</span>(app)</span>
-<span id="cb57-8"><a href="#cb57-8"></a>      self<span class="sc">$</span>selenider <span class="ot">&lt;-</span> <span class="fu">selenider_session</span>(</span>
-<span id="cb57-9"><a href="#cb57-9"></a>        <span class="at">driver =</span> self<span class="sc">$</span>driver,</span>
-<span id="cb57-10"><a href="#cb57-10"></a>        <span class="at">local =</span> <span class="cn">FALSE</span></span>
-<span id="cb57-11"><a href="#cb57-11"></a>      )</span>
-<span id="cb57-12"><a href="#cb57-12"></a>    },</span>
-<span id="cb57-13"><a href="#cb57-13"></a>    <span class="at">expect_summary_visible =</span> <span class="cf">function</span>() {</span>
-<span id="cb57-14"><a href="#cb57-14"></a>      <span class="fu">find_element</span>(self<span class="sc">$</span>selenider, <span class="at">css =</span> <span class="st">"#summary &gt; table"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb57-15"><a href="#cb57-15"></a>        <span class="fu">elem_expect</span>(is_visible) <span class="sc">|&gt;</span></span>
-<span id="cb57-16"><a href="#cb57-16"></a>        <span class="fu">elem_expect</span>(\(x) <span class="fu">has_at_least</span>(<span class="fu">elem_children</span>(x), <span class="dv">1</span>))</span>
-<span id="cb57-17"><a href="#cb57-17"></a>    }</span>
-<span id="cb57-18"><a href="#cb57-18"></a>  )</span>
-<span id="cb57-19"><a href="#cb57-19"></a>)</span>
-<span id="cb57-20"><a href="#cb57-20"></a></span>
-<span id="cb57-21"><a href="#cb57-21"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
-<span id="cb57-22"><a href="#cb57-22"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
-<span id="cb57-23"><a href="#cb57-23"></a>    <span class="co"># Arrange</span></span>
-<span id="cb57-24"><a href="#cb57-24"></a>    app <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(</span>
-<span id="cb57-25"><a href="#cb57-25"></a>      <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
-<span id="cb57-26"><a href="#cb57-26"></a>      <span class="at">server =</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb57-27"><a href="#cb57-27"></a>        data_provider <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb57-28"><a href="#cb57-28"></a>          <span class="at">get_summary =</span> <span class="cf">function</span>() {</span>
-<span id="cb57-29"><a href="#cb57-29"></a>            iris</span>
-<span id="cb57-30"><a href="#cb57-30"></a>          }</span>
-<span id="cb57-31"><a href="#cb57-31"></a>        )</span>
-<span id="cb57-32"><a href="#cb57-32"></a>        <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>, data_provider)</span>
-<span id="cb57-33"><a href="#cb57-33"></a>      }</span>
-<span id="cb57-34"><a href="#cb57-34"></a>    )</span>
-<span id="cb57-35"><a href="#cb57-35"></a>    page <span class="ot">&lt;-</span> DatasetSummary<span class="sc">$</span><span class="fu">new</span>(app)</span>
-<span id="cb57-36"><a href="#cb57-36"></a></span>
-<span id="cb57-37"><a href="#cb57-37"></a>    <span class="co"># Act</span></span>
-<span id="cb57-38"><a href="#cb57-38"></a></span>
-<span id="cb57-39"><a href="#cb57-39"></a>    <span class="co"># Assert</span></span>
-<span id="cb57-40"><a href="#cb57-40"></a>    page<span class="sc">$</span><span class="fu">expect_summary_visible</span>()</span>
-<span id="cb57-41"><a href="#cb57-41"></a>  })</span>
-<span id="cb57-42"><a href="#cb57-42"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56" data-code-line-numbers="40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>DatasetSummary <span class="ot">&lt;-</span> R6<span class="sc">::</span><span class="fu">R6Class</span>(</span>
+<span id="cb56-2"><a href="#cb56-2"></a>  <span class="at">classname =</span> <span class="st">"DatasetSummary"</span>,</span>
+<span id="cb56-3"><a href="#cb56-3"></a>  <span class="at">public =</span> <span class="fu">list</span>(</span>
+<span id="cb56-4"><a href="#cb56-4"></a>    <span class="at">driver =</span> <span class="cn">NULL</span>,</span>
+<span id="cb56-5"><a href="#cb56-5"></a>    <span class="at">selenider =</span> <span class="cn">NULL</span>,</span>
+<span id="cb56-6"><a href="#cb56-6"></a>    <span class="at">initialize =</span> <span class="cf">function</span>(app) {</span>
+<span id="cb56-7"><a href="#cb56-7"></a>      self<span class="sc">$</span>driver <span class="ot">&lt;-</span> AppDriver<span class="sc">$</span><span class="fu">new</span>(app)</span>
+<span id="cb56-8"><a href="#cb56-8"></a>      self<span class="sc">$</span>selenider <span class="ot">&lt;-</span> <span class="fu">selenider_session</span>(</span>
+<span id="cb56-9"><a href="#cb56-9"></a>        <span class="at">driver =</span> self<span class="sc">$</span>driver,</span>
+<span id="cb56-10"><a href="#cb56-10"></a>        <span class="at">local =</span> <span class="cn">FALSE</span></span>
+<span id="cb56-11"><a href="#cb56-11"></a>      )</span>
+<span id="cb56-12"><a href="#cb56-12"></a>    },</span>
+<span id="cb56-13"><a href="#cb56-13"></a>    <span class="at">expect_summary_visible =</span> <span class="cf">function</span>() {</span>
+<span id="cb56-14"><a href="#cb56-14"></a>      <span class="fu">find_element</span>(self<span class="sc">$</span>selenider, <span class="at">css =</span> <span class="st">"#summary &gt; table"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb56-15"><a href="#cb56-15"></a>        <span class="fu">elem_expect</span>(is_visible) <span class="sc">|&gt;</span></span>
+<span id="cb56-16"><a href="#cb56-16"></a>        <span class="fu">elem_expect</span>(\(x) <span class="fu">has_at_least</span>(<span class="fu">elem_children</span>(x), <span class="dv">1</span>))</span>
+<span id="cb56-17"><a href="#cb56-17"></a>    }</span>
+<span id="cb56-18"><a href="#cb56-18"></a>  )</span>
+<span id="cb56-19"><a href="#cb56-19"></a>)</span>
+<span id="cb56-20"><a href="#cb56-20"></a></span>
+<span id="cb56-21"><a href="#cb56-21"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
+<span id="cb56-22"><a href="#cb56-22"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
+<span id="cb56-23"><a href="#cb56-23"></a>    <span class="co"># Arrange</span></span>
+<span id="cb56-24"><a href="#cb56-24"></a>    app <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(</span>
+<span id="cb56-25"><a href="#cb56-25"></a>      <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
+<span id="cb56-26"><a href="#cb56-26"></a>      <span class="at">server =</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb56-27"><a href="#cb56-27"></a>        data_provider <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb56-28"><a href="#cb56-28"></a>          <span class="at">get_summary =</span> <span class="cf">function</span>() {</span>
+<span id="cb56-29"><a href="#cb56-29"></a>            iris</span>
+<span id="cb56-30"><a href="#cb56-30"></a>          }</span>
+<span id="cb56-31"><a href="#cb56-31"></a>        )</span>
+<span id="cb56-32"><a href="#cb56-32"></a>        <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>, data_provider)</span>
+<span id="cb56-33"><a href="#cb56-33"></a>      }</span>
+<span id="cb56-34"><a href="#cb56-34"></a>    )</span>
+<span id="cb56-35"><a href="#cb56-35"></a>    page <span class="ot">&lt;-</span> DatasetSummary<span class="sc">$</span><span class="fu">new</span>(app)</span>
+<span id="cb56-36"><a href="#cb56-36"></a></span>
+<span id="cb56-37"><a href="#cb56-37"></a>    <span class="co"># Act</span></span>
+<span id="cb56-38"><a href="#cb56-38"></a></span>
+<span id="cb56-39"><a href="#cb56-39"></a>    <span class="co"># Assert</span></span>
+<span id="cb56-40"><a href="#cb56-40"></a>    page<span class="sc">$</span><span class="fu">expect_summary_visible</span>()</span>
+<span id="cb56-41"><a href="#cb56-41"></a>  })</span>
+<span id="cb56-42"><a href="#cb56-42"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Test passed 😸</code></pre>
@@ -2236,20 +2231,20 @@ Backtrace:
 <div class="code-with-filename-file">
 <pre><strong>dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a>dataset_summary_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
-<span id="cb59-2"><a href="#cb59-2"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
-<span id="cb59-3"><a href="#cb59-3"></a>  <span class="fu">fluidPage</span>(</span>
-<span id="cb59-4"><a href="#cb59-4"></a>    <span class="fu">tableOutput</span>(<span class="fu">ns</span>(<span class="st">"summary"</span>))</span>
-<span id="cb59-5"><a href="#cb59-5"></a>  )</span>
-<span id="cb59-6"><a href="#cb59-6"></a>}</span>
-<span id="cb59-7"><a href="#cb59-7"></a></span>
-<span id="cb59-8"><a href="#cb59-8"></a>dataset_summary_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id, data_provider) {</span>
-<span id="cb59-9"><a href="#cb59-9"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
-<span id="cb59-10"><a href="#cb59-10"></a>    output<span class="sc">$</span>summary <span class="ot">&lt;-</span> <span class="fu">renderTable</span>({</span>
-<span id="cb59-11"><a href="#cb59-11"></a>      data_provider<span class="sc">$</span><span class="fu">get_summary</span>()</span>
-<span id="cb59-12"><a href="#cb59-12"></a>    })</span>
-<span id="cb59-13"><a href="#cb59-13"></a>  })</span>
-<span id="cb59-14"><a href="#cb59-14"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a>dataset_summary_ui <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb58-2"><a href="#cb58-2"></a>  ns <span class="ot">&lt;-</span> <span class="fu">NS</span>(id)</span>
+<span id="cb58-3"><a href="#cb58-3"></a>  <span class="fu">fluidPage</span>(</span>
+<span id="cb58-4"><a href="#cb58-4"></a>    <span class="fu">tableOutput</span>(<span class="fu">ns</span>(<span class="st">"summary"</span>))</span>
+<span id="cb58-5"><a href="#cb58-5"></a>  )</span>
+<span id="cb58-6"><a href="#cb58-6"></a>}</span>
+<span id="cb58-7"><a href="#cb58-7"></a></span>
+<span id="cb58-8"><a href="#cb58-8"></a>dataset_summary_server <span class="ot">&lt;-</span> <span class="cf">function</span>(id, data_provider) {</span>
+<span id="cb58-9"><a href="#cb58-9"></a>  <span class="fu">moduleServer</span>(id, <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb58-10"><a href="#cb58-10"></a>    output<span class="sc">$</span>summary <span class="ot">&lt;-</span> <span class="fu">renderTable</span>({</span>
+<span id="cb58-11"><a href="#cb58-11"></a>      data_provider<span class="sc">$</span><span class="fu">get_summary</span>()</span>
+<span id="cb58-12"><a href="#cb58-12"></a>    })</span>
+<span id="cb58-13"><a href="#cb58-13"></a>  })</span>
+<span id="cb58-14"><a href="#cb58-14"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2262,62 +2257,62 @@ Backtrace:
 <div class="code-with-filename-file">
 <pre><strong>test-dataset_summary.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb60" data-code-line-numbers="1-13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="cf">if</span> (<span class="fu">interactive</span>()) {</span>
-<span id="cb60-2"><a href="#cb60-2"></a>  <span class="fu">shinyApp</span>(</span>
-<span id="cb60-3"><a href="#cb60-3"></a>    <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
-<span id="cb60-4"><a href="#cb60-4"></a>    <span class="at">server =</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb60-5"><a href="#cb60-5"></a>      data_provider <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb60-6"><a href="#cb60-6"></a>        <span class="at">get_summary =</span> <span class="cf">function</span>() {</span>
-<span id="cb60-7"><a href="#cb60-7"></a>          iris</span>
-<span id="cb60-8"><a href="#cb60-8"></a>        }</span>
-<span id="cb60-9"><a href="#cb60-9"></a>      )</span>
-<span id="cb60-10"><a href="#cb60-10"></a>      <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>, data_provider)</span>
-<span id="cb60-11"><a href="#cb60-11"></a>    }</span>
-<span id="cb60-12"><a href="#cb60-12"></a>  )</span>
-<span id="cb60-13"><a href="#cb60-13"></a>}</span>
-<span id="cb60-14"><a href="#cb60-14"></a></span>
-<span id="cb60-15"><a href="#cb60-15"></a>DatasetSummary <span class="ot">&lt;-</span> R6<span class="sc">::</span><span class="fu">R6Class</span>(</span>
-<span id="cb60-16"><a href="#cb60-16"></a>  <span class="at">classname =</span> <span class="st">"DatasetSummary"</span>,</span>
-<span id="cb60-17"><a href="#cb60-17"></a>  <span class="at">public =</span> <span class="fu">list</span>(</span>
-<span id="cb60-18"><a href="#cb60-18"></a>    <span class="at">driver =</span> <span class="cn">NULL</span>,</span>
-<span id="cb60-19"><a href="#cb60-19"></a>    <span class="at">selenider =</span> <span class="cn">NULL</span>,</span>
-<span id="cb60-20"><a href="#cb60-20"></a>    <span class="at">initialize =</span> <span class="cf">function</span>(app) {</span>
-<span id="cb60-21"><a href="#cb60-21"></a>      self<span class="sc">$</span>driver <span class="ot">&lt;-</span> AppDriver<span class="sc">$</span><span class="fu">new</span>(app)</span>
-<span id="cb60-22"><a href="#cb60-22"></a>      self<span class="sc">$</span>selenider <span class="ot">&lt;-</span> <span class="fu">selenider_session</span>(</span>
-<span id="cb60-23"><a href="#cb60-23"></a>        <span class="at">driver =</span> self<span class="sc">$</span>driver,</span>
-<span id="cb60-24"><a href="#cb60-24"></a>        <span class="at">local =</span> <span class="cn">FALSE</span></span>
-<span id="cb60-25"><a href="#cb60-25"></a>      )</span>
-<span id="cb60-26"><a href="#cb60-26"></a>    },</span>
-<span id="cb60-27"><a href="#cb60-27"></a>    <span class="at">expect_summary_visible =</span> <span class="cf">function</span>() {</span>
-<span id="cb60-28"><a href="#cb60-28"></a>      <span class="fu">find_element</span>(self<span class="sc">$</span>selenider, <span class="at">css =</span> <span class="st">"#summary &gt; table"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb60-29"><a href="#cb60-29"></a>        <span class="fu">elem_expect</span>(is_visible) <span class="sc">|&gt;</span></span>
-<span id="cb60-30"><a href="#cb60-30"></a>        <span class="fu">elem_expect</span>(\(x) <span class="fu">has_at_least</span>(<span class="fu">elem_children</span>(x), <span class="dv">1</span>))</span>
-<span id="cb60-31"><a href="#cb60-31"></a>    }</span>
-<span id="cb60-32"><a href="#cb60-32"></a>  )</span>
-<span id="cb60-33"><a href="#cb60-33"></a>)</span>
-<span id="cb60-34"><a href="#cb60-34"></a></span>
-<span id="cb60-35"><a href="#cb60-35"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
-<span id="cb60-36"><a href="#cb60-36"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
-<span id="cb60-37"><a href="#cb60-37"></a>    <span class="co"># Arrange</span></span>
-<span id="cb60-38"><a href="#cb60-38"></a>    app <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(</span>
-<span id="cb60-39"><a href="#cb60-39"></a>      <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
-<span id="cb60-40"><a href="#cb60-40"></a>      <span class="at">server =</span> <span class="cf">function</span>(input, output) {</span>
-<span id="cb60-41"><a href="#cb60-41"></a>        data_provider <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb60-42"><a href="#cb60-42"></a>          <span class="at">get_summary =</span> <span class="cf">function</span>() {</span>
-<span id="cb60-43"><a href="#cb60-43"></a>            iris</span>
-<span id="cb60-44"><a href="#cb60-44"></a>          }</span>
-<span id="cb60-45"><a href="#cb60-45"></a>        )</span>
-<span id="cb60-46"><a href="#cb60-46"></a>        <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>, data_provider)</span>
-<span id="cb60-47"><a href="#cb60-47"></a>      }</span>
-<span id="cb60-48"><a href="#cb60-48"></a>    )</span>
-<span id="cb60-49"><a href="#cb60-49"></a>    page <span class="ot">&lt;-</span> DatasetSummary<span class="sc">$</span><span class="fu">new</span>(app)</span>
-<span id="cb60-50"><a href="#cb60-50"></a></span>
-<span id="cb60-51"><a href="#cb60-51"></a>    <span class="co"># Act</span></span>
-<span id="cb60-52"><a href="#cb60-52"></a></span>
-<span id="cb60-53"><a href="#cb60-53"></a>    <span class="co"># Assert</span></span>
-<span id="cb60-54"><a href="#cb60-54"></a>    page<span class="sc">$</span><span class="fu">expect_summary_visible</span>()</span>
-<span id="cb60-55"><a href="#cb60-55"></a>  })</span>
-<span id="cb60-56"><a href="#cb60-56"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59" data-code-line-numbers="1-13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="cf">if</span> (<span class="fu">interactive</span>()) {</span>
+<span id="cb59-2"><a href="#cb59-2"></a>  <span class="fu">shinyApp</span>(</span>
+<span id="cb59-3"><a href="#cb59-3"></a>    <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
+<span id="cb59-4"><a href="#cb59-4"></a>    <span class="at">server =</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb59-5"><a href="#cb59-5"></a>      data_provider <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb59-6"><a href="#cb59-6"></a>        <span class="at">get_summary =</span> <span class="cf">function</span>() {</span>
+<span id="cb59-7"><a href="#cb59-7"></a>          iris</span>
+<span id="cb59-8"><a href="#cb59-8"></a>        }</span>
+<span id="cb59-9"><a href="#cb59-9"></a>      )</span>
+<span id="cb59-10"><a href="#cb59-10"></a>      <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>, data_provider)</span>
+<span id="cb59-11"><a href="#cb59-11"></a>    }</span>
+<span id="cb59-12"><a href="#cb59-12"></a>  )</span>
+<span id="cb59-13"><a href="#cb59-13"></a>}</span>
+<span id="cb59-14"><a href="#cb59-14"></a></span>
+<span id="cb59-15"><a href="#cb59-15"></a>DatasetSummary <span class="ot">&lt;-</span> R6<span class="sc">::</span><span class="fu">R6Class</span>(</span>
+<span id="cb59-16"><a href="#cb59-16"></a>  <span class="at">classname =</span> <span class="st">"DatasetSummary"</span>,</span>
+<span id="cb59-17"><a href="#cb59-17"></a>  <span class="at">public =</span> <span class="fu">list</span>(</span>
+<span id="cb59-18"><a href="#cb59-18"></a>    <span class="at">driver =</span> <span class="cn">NULL</span>,</span>
+<span id="cb59-19"><a href="#cb59-19"></a>    <span class="at">selenider =</span> <span class="cn">NULL</span>,</span>
+<span id="cb59-20"><a href="#cb59-20"></a>    <span class="at">initialize =</span> <span class="cf">function</span>(app) {</span>
+<span id="cb59-21"><a href="#cb59-21"></a>      self<span class="sc">$</span>driver <span class="ot">&lt;-</span> AppDriver<span class="sc">$</span><span class="fu">new</span>(app)</span>
+<span id="cb59-22"><a href="#cb59-22"></a>      self<span class="sc">$</span>selenider <span class="ot">&lt;-</span> <span class="fu">selenider_session</span>(</span>
+<span id="cb59-23"><a href="#cb59-23"></a>        <span class="at">driver =</span> self<span class="sc">$</span>driver,</span>
+<span id="cb59-24"><a href="#cb59-24"></a>        <span class="at">local =</span> <span class="cn">FALSE</span></span>
+<span id="cb59-25"><a href="#cb59-25"></a>      )</span>
+<span id="cb59-26"><a href="#cb59-26"></a>    },</span>
+<span id="cb59-27"><a href="#cb59-27"></a>    <span class="at">expect_summary_visible =</span> <span class="cf">function</span>() {</span>
+<span id="cb59-28"><a href="#cb59-28"></a>      <span class="fu">find_element</span>(self<span class="sc">$</span>selenider, <span class="at">css =</span> <span class="st">"#summary &gt; table"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb59-29"><a href="#cb59-29"></a>        <span class="fu">elem_expect</span>(is_visible) <span class="sc">|&gt;</span></span>
+<span id="cb59-30"><a href="#cb59-30"></a>        <span class="fu">elem_expect</span>(\(x) <span class="fu">has_at_least</span>(<span class="fu">elem_children</span>(x), <span class="dv">1</span>))</span>
+<span id="cb59-31"><a href="#cb59-31"></a>    }</span>
+<span id="cb59-32"><a href="#cb59-32"></a>  )</span>
+<span id="cb59-33"><a href="#cb59-33"></a>)</span>
+<span id="cb59-34"><a href="#cb59-34"></a></span>
+<span id="cb59-35"><a href="#cb59-35"></a><span class="fu">describe</span>(<span class="st">"dataset summary"</span>, {</span>
+<span id="cb59-36"><a href="#cb59-36"></a>  <span class="fu">it</span>(<span class="st">"should show the summary"</span>, {</span>
+<span id="cb59-37"><a href="#cb59-37"></a>    <span class="co"># Arrange</span></span>
+<span id="cb59-38"><a href="#cb59-38"></a>    app <span class="ot">&lt;-</span> <span class="fu">shinyApp</span>(</span>
+<span id="cb59-39"><a href="#cb59-39"></a>      <span class="at">ui =</span> <span class="fu">dataset_summary_ui</span>(<span class="cn">NULL</span>),</span>
+<span id="cb59-40"><a href="#cb59-40"></a>      <span class="at">server =</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb59-41"><a href="#cb59-41"></a>        data_provider <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb59-42"><a href="#cb59-42"></a>          <span class="at">get_summary =</span> <span class="cf">function</span>() {</span>
+<span id="cb59-43"><a href="#cb59-43"></a>            iris</span>
+<span id="cb59-44"><a href="#cb59-44"></a>          }</span>
+<span id="cb59-45"><a href="#cb59-45"></a>        )</span>
+<span id="cb59-46"><a href="#cb59-46"></a>        <span class="fu">dataset_summary_server</span>(<span class="cn">NULL</span>, data_provider)</span>
+<span id="cb59-47"><a href="#cb59-47"></a>      }</span>
+<span id="cb59-48"><a href="#cb59-48"></a>    )</span>
+<span id="cb59-49"><a href="#cb59-49"></a>    page <span class="ot">&lt;-</span> DatasetSummary<span class="sc">$</span><span class="fu">new</span>(app)</span>
+<span id="cb59-50"><a href="#cb59-50"></a></span>
+<span id="cb59-51"><a href="#cb59-51"></a>    <span class="co"># Act</span></span>
+<span id="cb59-52"><a href="#cb59-52"></a></span>
+<span id="cb59-53"><a href="#cb59-53"></a>    <span class="co"># Assert</span></span>
+<span id="cb59-54"><a href="#cb59-54"></a>    page<span class="sc">$</span><span class="fu">expect_summary_visible</span>()</span>
+<span id="cb59-55"><a href="#cb59-55"></a>  })</span>
+<span id="cb59-56"><a href="#cb59-56"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Test passed 🌈</code></pre>
